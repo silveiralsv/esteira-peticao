@@ -1,6 +1,6 @@
 # Catálogo de teses
 
-O texto de cada tese (fundamentos, citações, jurisprudência e pedido) está nas petições do banco de teses, a pasta do Drive em `config.local.md`. O título de cada arquivo do banco lista as teses principais dele. A seção "DA SÍNTESE DA RECLAMATÓRIA" de cada petição lista todas as teses.
+O texto de cada tese (fundamentos, citações, jurisprudência e pedido) está nas petições do banco de teses, a pasta do Drive em `config.local.md`. O título de cada arquivo do banco lista só as teses principais dele. As teses comuns (horas extras, periculosidade, subsidiária, danos morais) quase nunca estão no título. Para achar os exemplos de uma tese, leia a seção "DA SÍNTESE DA RECLAMATÓRIA" de cada petição.
 
 Este catálogo diz quando a tese entra, que fatos ela precisa e como o valor é calculado. As regras de conta ficam em `calculo.md`.
 
@@ -29,7 +29,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Multa do art. 467 | verbas rescisórias incontroversas não pagas | idem | P: 50% do total das rescisórias | não |
 | Multa do art. 477 | rescisórias pagas fora do prazo ou não pagas | data do pagamento ou não pagamento | P: 1 remuneração | não |
 | Diferenças de FGTS | depósitos faltando | extrato do FGTS ou afirmação clara do cliente, com período | A: 8% × remuneração × meses + 40% | não |
-| Responsabilidade subsidiária | "RESPONSABILIDADE SUBSIDIÁRIA: Sim" e tomador | tomador, período, fiscalização | sem valor (DECLARAR) | — |
+| Responsabilidade subsidiária | seção "RESPONSABILIDADE SUBSIDIÁRIA" com um tomador indicado (com ou sem a palavra "Sim") | tomador, período, fiscalização | sem valor (DECLARAR) | — |
 | Horas extras / invalidade do banco de horas / 12x36 | "HORAS EXTRAS" | minutos por dia ou plantão, frequência, causa | P | todos, com DSR |
 | Intervalo intrajornada | "INTERVALO" | minutos usufruídos | P: minutos suprimidos, natureza indenizatória | não |
 | Feriados laborados | "FERIADOS" | feriados trabalhados sem folga na mesma semana | P: dobra (100%) | todos, com DSR |

@@ -1,6 +1,6 @@
 # Regras de cálculo
 
-Estas regras saem da petição de referência e das 13 petições do banco de teses. O modelo de cálculo do escritório (um só para todos os clientes, link em `config.local.md`) é a fonte das contas de cada bloco (Q1). Quando a planilha e esta página divergirem, vale a planilha e o Validador escreve uma nota.
+Estas regras saem da petição de referência e das petições do banco de teses. O modelo de cálculo do escritório (um só para todos os clientes, link em `config.local.md`) é a fonte das contas de cada bloco (Q1). Quando a planilha e esta página divergirem, vale a planilha e o Validador escreve uma nota.
 
 ## Fontes dos parâmetros
 
@@ -18,6 +18,8 @@ Estas regras saem da petição de referência e das 13 petições do banco de te
 - **Prescrição quinquenal:** o período começa no maior entre a admissão e (data de referência − 5 anos).
 - **Fim do período:** a saída. Se a pessoa ainda trabalha, a data de referência.
 - **Meses:** conte os meses do período. Fração de 15 dias ou mais vale 1 mês.
+- **Meses trabalhados:** nas verbas que dependem de trabalho efetivo (horas extras, noturno, feriados, plantões), tire os meses de férias e de afastamento.
+- **Hora noturna reduzida:** quando o texto pedir a hora noturna reduzida (52 minutos e 30 segundos), a conta multiplica as horas de relógio por 60/52,5.
 
 ## Reflexos
 
@@ -68,7 +70,7 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 
 ## Honorários e valor da causa
 
-- **Honorários:** 15% da soma de todos os pedidos com valor, incluindo danos, a multa do PPP e as multas. É o padrão das 13 petições do banco.
+- **Honorários:** 15% da soma de todos os pedidos com valor, incluindo danos, a multa do PPP e as multas. É o padrão de todas as petições do banco.
 - **Valor da causa:** soma dos pedidos + honorários.
 - O mesmo valor aparece em "SUBTOTAL em <dia> de <mês por extenso> de <ano>" e no item G das provas, com o valor por extenso.
 
@@ -77,5 +79,6 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 - Baixe o modelo de cálculo e preencha a cópia local só as células de entrada dos blocos das teses escolhidas. Descubra essas células lendo a planilha com `openpyxl` (rótulos e fórmulas). Registre no log cada célula preenchida.
 - Limpe as células de entrada que sobraram de outro caso (nome de paradigma, datas, avos e dias do cabeçalho). Se uma fórmula der `#REF!`, não use o bloco: calcule numa aba extra e registre no log.
 - Teses sem bloco no modelo vão numa aba extra `Cálculos extras`, uma linha por item, com a fórmula visível.
-- Para ler os totais calculados, suba a planilha (ela vira Google Sheet e calcula as fórmulas) e leia com `read_file_content`.
+- Para ler os totais calculados, suba a planilha (ela vira Google Sheet e calcula as fórmulas) e baixe o Sheet exportado como xlsx, como diz `drive.md`.
+- **Salário com várias faixas:** o modelo tem uma célula de salário só. Nos blocos que usam todo o período, preencha o salário médio ponderado pelos meses, calculado na aba `Cálculos extras`. Um bloco com outro período (ex.: só os meses noturnos) é calculado faixa a faixa na aba extra.
 - Rode o Python com `uv run --with openpyxl python3 ...`. Não instale pacotes no sistema.

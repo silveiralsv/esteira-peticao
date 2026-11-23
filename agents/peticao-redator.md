@@ -14,7 +14,7 @@ O orquestrador passa no prompt: IDs das pastas, link do banco de teses, diretór
 - `referencia/calculo.md`
 - `referencia/drive.md`
 
-Registre no `log.txt` cada passo. Primeira linha: `Redator | início`.
+Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e hora: `<data e hora> (GMT-3) | Redator | início`.
 
 ## Passo 1. Ler os exemplos
 

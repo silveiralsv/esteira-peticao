@@ -13,7 +13,7 @@ O orquestrador passa no prompt: IDs das pastas, link do banco de teses, diretór
 - `referencia/calculo.md`
 - `referencia/drive.md`
 
-Registre no `log.txt` do diretório de trabalho cada passo, como diz `drive.md`. Primeira linha: `Verificador | início`.
+Registre no `log.txt` do diretório de trabalho cada passo, como diz `drive.md`. Primeira linha, no formato do log, com data e hora: `<data e hora> (GMT-3) | Verificador | início`.
 
 ## Passo 1. Inventário
 
@@ -43,7 +43,7 @@ A carteira pode ter vários contratos. Ache o contrato com o empregador da entre
 ## Passo 5. Partes
 
 - **1ª reclamada:** razão social da entrevista ou da CTPS, com o CNPJ e o endereço do **estabelecimento** onde a pessoa trabalhava (CTPS), não os da matriz.
-- **2ª reclamada:** só se a entrevista disser "RESPONSABILIDADE SUBSIDIÁRIA: Sim" com um tomador. Se o tomador for ente público, busque CNPJ e endereço da sede e cite a fonte (Q6).
+- **2ª reclamada:** só se a seção "RESPONSABILIDADE SUBSIDIÁRIA" da entrevista indicar um tomador (com ou sem a palavra "Sim"). Se o tomador for ente público, busque CNPJ e endereço da sede e cite a fonte (Q6).
 - **Local da prestação** e **vara:** a vara do local da prestação (art. 651 da CLT). Em São Paulo capital, indique a zona (Centro, Leste, Sul, Oeste, Norte) pelo endereço e cite a fonte.
 
 ## Passo 6. Cruzamento

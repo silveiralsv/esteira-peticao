@@ -2,6 +2,8 @@
 
 Todas as operações usam as ferramentas do conector Google Drive (`mcp__claude_ai_Google_Drive__*`). Se estiverem adiadas, carregue com ToolSearch antes de usar.
 
+**Arquivos locais:** grave tudo (downloads, textos extraídos, scripts, HTML) só no diretório de trabalho da rodada. Nunca use outra pasta, nem o scratchpad da sessão. O orquestrador apaga o diretório de trabalho no fim, e ele tem dados de clientes.
+
 ## Ler
 
 - Texto de PDF, docx, xlsx, Google Doc ou Google Sheet: `read_file_content`.
@@ -10,14 +12,15 @@ Todas as operações usam as ferramentas do conector Google Drive (`mcp__claude_
 ## Baixar um arquivo binário (xlsx)
 
 1. Chame `download_file_content` com o ID.
-2. O resultado é JSON com o conteúdo em base64. Quando ele é grande, a ferramenta salva o resultado num arquivo e mostra o caminho. Use esse arquivo.
-3. Decodifique com Python, sem copiar o base64 para o comando:
+2. A ferramenta salva o arquivo em disco e mostra o caminho. Copie esse arquivo para o diretório de trabalho.
+3. Se em vez disso vier um JSON com base64, decodifique com Python a partir do arquivo do resultado, sem copiar o base64 para o comando.
 
-   ```bash
-   python3 -c "import json,base64,sys;d=json.load(open(sys.argv[1]));open(sys.argv[2],'wb').write(base64.b64decode(d.get('content') or d.get('base64Content') or d['data']))" <arquivo do resultado> <destino>.xlsx
-   ```
+## Ler os valores calculados de um Google Sheet
 
-   Se a chave for outra, abra o JSON e veja o nome do campo.
+`read_file_content` mostra só as primeiras linhas de uma planilha, sem os totais. Para ler os valores:
+
+1. Chame `download_file_content` com o ID do Sheet e `exportMimeType: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`.
+2. Leia o xlsx baixado com `uv run --with openpyxl python3`, abrindo com `load_workbook(..., data_only=True)`.
 
 ## Subir um arquivo
 
