@@ -30,9 +30,9 @@ Se o veredito for Bloqueado, a rodada para depois do Verificador.
 
 | Agente | Modelo | Esforço | Por quê |
 |---|---|---|---|
-| `peticao-verificador` | Opus (`opus`, hoje Opus 5.5) | `high` | Cruza procuração, CTPS e entrevista. Um erro aqui passa para as outras etapas. |
-| `peticao-redator` | Opus (`opus`, hoje Opus 5.5) | `high` | Texto longo, que precisa seguir o estilo do escritório e não copiar restos de outro caso. |
-| `peticao-validador` | Opus (`opus`, hoje Opus 5.5) | `xhigh` | Refaz todas as contas e confere cada fato. É a última barreira antes do advogado. |
+| `peticao-verificador` | Opus (`opus`, hoje Opus 5.5) | `high` | Escolhe as teses e dá o veredito. Uma tese esquecida aqui não é pega depois, porque o Validador só confere o que está na petição. |
+| `peticao-redator` | Opus (`opus`, hoje Opus 5.5) | `medium` | Copia e adapta o texto do banco de teses. Os números vêm da planilha, e o Validador corrige o que sair errado. É o agente que mais gasta. |
+| `peticao-validador` | Opus (`opus`, hoje Opus 5.5) | `high` | Confere cada fato e procura restos de outro caso. As contas ficam num script Python, não no raciocínio do modelo. |
 
 O alias `opus` sempre aponta para o Opus mais recente. A skill (o orquestrador) roda no modelo e no esforço da sua sessão. Para mudar, edite `model` e `effort` no início de cada arquivo em `agents/`.
 
