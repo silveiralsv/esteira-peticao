@@ -22,7 +22,7 @@ Responda ao usuário em português.
 
 ## Passo 1. Preparar a rodada
 
-1. Extraia o ID da pasta do link (`/folders/<ID>`). Se o link não for de pasta, pare e peça o link da pasta do cliente.
+1. Extraia o ID da pasta do link (`/folders/<ID>`). Se o link não for de pasta, pare e peça o link da pasta do cliente. Se a pasta for a própria `O que eu recebo` ou `O resultado` (compare sem acento e sem maiúsculas), use a pasta-mãe dela como pasta do cliente e registre isso no log.
 2. Liste os filhos da pasta (`parentId = '<ID>'`). Ache as subpastas `O que eu recebo` e `O resultado` (compare sem acento e sem maiúsculas). Se faltar `O que eu recebo`, pare e avise. Se faltar `O resultado`, crie a pasta (`create_file` com `contentMimeType: application/vnd.google-apps.folder` e `parentId` = pasta do cliente).
 3. Leia `config.local.md` nesta pasta da skill. Ele tem o link da pasta do banco de teses e o link do modelo de cálculo do escritório (um só para todos os clientes). Se o arquivo ou um dos links faltar, pare e diga ao usuário para copiar `config.example.md` para `config.local.md` e preencher.
 4. Crie o diretório de trabalho: `${TMPDIR:-/tmp}/esteira-peticao/<ID da pasta do cliente>/`. Se já existir de uma rodada interrompida, apague o conteúdo antes.
