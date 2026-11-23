@@ -26,6 +26,16 @@ Se faltar informação, a esteira cria o Doc `PERGUNTAS <NOME DO CLIENTE>`. Voc�
 
 Se o veredito for Bloqueado, a rodada para depois do Verificador.
 
+### Modelo e esforço
+
+| Agente | Modelo | Esforço | Por quê |
+|---|---|---|---|
+| `peticao-verificador` | Opus (`opus`, hoje Opus 5.5) | `high` | Cruza procuração, CTPS e entrevista. Um erro aqui passa para as outras etapas. |
+| `peticao-redator` | Opus (`opus`, hoje Opus 5.5) | `high` | Texto longo, que precisa seguir o estilo do escritório e não copiar restos de outro caso. |
+| `peticao-validador` | Opus (`opus`, hoje Opus 5.5) | `xhigh` | Refaz todas as contas e confere cada fato. É a última barreira antes do advogado. |
+
+O alias `opus` sempre aponta para o Opus mais recente. A skill (o orquestrador) roda no modelo e no esforço da sua sessão. Para mudar, edite `model` e `effort` no início de cada arquivo em `agents/`.
+
 ## Instalação
 
 Pré-requisitos: Claude Code com o conector Google Drive ligado e `uv` instalado (o Redator usa `openpyxl` com `uv run --with openpyxl`).
