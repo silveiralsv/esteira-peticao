@@ -13,7 +13,7 @@ A pasta do cliente tem duas subpastas:
 - `O que eu recebo`: sempre tem procuração, entrevista e CTPS. Outros documentos são opcionais.
 - `O resultado`: onde a esteira grava tudo. Se não existir, a esteira cria.
 
-O modelo de cálculo (xlsx zerado) é um só para todos os clientes e fica no Drive do escritório. O link dele vai em `config.local.md`. A esteira nunca altera o modelo; ela trabalha numa cópia.
+O modelo de cálculo (xlsx zerado) e o modelo de petição em papel timbrado (docx com o logo e o rodapé do escritório) são os mesmos para todos os clientes e ficam no Drive do escritório. Os links vão em `config.local.md`. A esteira nunca altera os modelos; ela trabalha em cópias.
 
 Se faltar informação, a esteira cria o Doc `PERGUNTAS <NOME DO CLIENTE>`. Você ou o advogado do caso responde o que puder, marca o que vai para o escritório e roda o mesmo comando de novo.
 
@@ -47,7 +47,7 @@ git clone git@github.com:silveiralsv/esteira-peticao.git ~/www/esteira-peticao
 cd ~/www/esteira-peticao
 ./install.sh
 cp skills/peticao-inicial/config.example.md skills/peticao-inicial/config.local.md
-# preencha em config.local.md o link da pasta do banco de teses e o link do modelo de cálculo
+# preencha em config.local.md os links do banco de teses, do modelo de cálculo e do modelo de papel timbrado
 ```
 
 O `install.sh` cria links simbólicos em `~/.claude` (ou em `$CLAUDE_CONFIG_DIR`):
@@ -70,6 +70,8 @@ skills/peticao-inicial/referencia/
   teses.md                           quando cada tese entra, fatos mínimos, cálculo
   calculo.md                         reflexos, rescisórias, multas, honorários, valor da causa
   drive.md                           como ler e gravar no Drive, e o formato do log
+  formatacao.md                      papéis do HTML da petição e o papel timbrado
+skills/peticao-inicial/scripts/gerar_docx.py   gera o docx no papel timbrado a partir do HTML
 skills/peticao-inicial/config.example.md
 ```
 

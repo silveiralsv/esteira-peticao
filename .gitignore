@@ -5,3 +5,4 @@ skills/peticao-inicial/config.local.md
 *.docx
 *.pdf
 .DS_Store
+__pycache__/

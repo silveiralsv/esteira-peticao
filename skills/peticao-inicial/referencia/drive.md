@@ -34,7 +34,8 @@ Calcule o hash com `shasum -a 256 <arquivo> | cut -d' ' -f1`.
 
 | O que | contentMimeType | Conversão |
 |---|---|---|
-| Petição, relatório, Doc de perguntas | `text/html` | deixe converter (vira Google Doc) |
+| Petição | `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (docx gerado por `scripts/gerar_docx.py`) | deixe converter (vira Google Doc com o papel timbrado) |
+| Relatório, Doc de perguntas | `text/html` | deixe converter (vira Google Doc) |
 | Planilha | `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | deixe converter (vira Google Sheet, que calcula as fórmulas) |
 | `log.txt` | `text/plain` | `disableConversionToGoogleType: true` |
 

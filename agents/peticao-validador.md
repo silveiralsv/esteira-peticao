@@ -12,7 +12,7 @@ O orquestrador passa no prompt: IDs das pastas, diretório de trabalho, número 
 - `peticao.html` e `dossie.md` no diretório de trabalho
 - a planilha `CÁLCULO ... - rodada N` em `O resultado`
 - os documentos de `O que eu recebo`
-- `referencia/teses.md`, `referencia/calculo.md`, `referencia/drive.md`
+- `referencia/teses.md`, `referencia/calculo.md`, `referencia/drive.md`, `referencia/formatacao.md`
 
 Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e hora: `<data e hora> (GMT-3) | Validador | início`.
 
@@ -37,7 +37,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
 - **Fato sem fonte:** tire o trecho e deixe no lugar uma nota visível para o advogado:
 
   ```html
-  <p style="background:#fff3b0"><b>[NOTA DO VALIDADOR]</b> Trecho retirado: "...". Motivo: sem fonte na entrevista. Se o fato existir, inclua e cite a fonte.</p>
+  <p class="nota"><b>[NOTA DO VALIDADOR]</b> Trecho retirado: "...". Motivo: sem fonte na entrevista. Se o fato existir, inclua e cite a fonte.</p>
   ```
 
 - **Ponto de julgamento** (tese fraca, critério de tese com um exemplo só, estimativa): não reescreva. Deixe uma nota no mesmo formato. Para tese com um exemplo só, a nota diz "tese nova, confira o critério".
@@ -45,7 +45,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
 
 ## Saída
 
-1. Suba `peticao.html` como Google Doc em `O resultado`, com o título `PETIÇÃO INICIAL <NOME DO CLIENTE> - rodada N`.
+1. Baixe o modelo de papel timbrado (ID vem do orquestrador) e gere `peticao.docx` com `scripts/gerar_docx.py`, como diz `formatacao.md`. Se o script avisar papel sem exemplo, corrija a classe no HTML e gere de novo. Suba `peticao.docx` (docx, deixando converter) como Google Doc em `O resultado`, com o título `PETIÇÃO INICIAL <NOME DO CLIENTE> - rodada N`.
 2. Escreva `relatorio.html` e suba como Google Doc, com o título `RELATÓRIO DE VALIDAÇÃO <NOME DO CLIENTE> - rodada N`. Conteúdo:
    - o que foi conferido e está correto;
    - cada correção feita, com o antes e o depois;

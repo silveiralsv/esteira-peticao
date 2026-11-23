@@ -13,6 +13,7 @@ O orquestrador passa no prompt: IDs das pastas, link do banco de teses, diretór
 - `referencia/teses.md`
 - `referencia/calculo.md`
 - `referencia/drive.md`
+- `referencia/formatacao.md`
 
 Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e hora: `<data e hora> (GMT-3) | Redator | início`.
 
@@ -29,24 +30,24 @@ Para cada tese do dossiê, leia no banco de teses o exemplo indicado (`read_file
 
 ## Passo 3. Petição
 
-Escreva `peticao.html` no diretório de trabalho. HTML simples: `<h1>`, `<h2>`, `<h3>`, `<p>`, `<blockquote>` para citações, fonte Times New Roman 12, texto justificado. Nada de CSS externo ou script.
+Escreva `peticao.html` no diretório de trabalho só com as marcações de `referencia/formatacao.md` (um papel por bloco). Nada de CSS, fonte, cor ou script: a formatação vem do papel timbrado do escritório.
 
 Estrutura, nesta ordem:
 
 1. **Endereçamento:** `AO JUÍZO DA VARA DO TRABALHO DE <cidade>/SP` com a zona, se houver (dossiê).
 2. **Preâmbulo:** a qualificação exata da procuração + "por seu advogado que este subscreve, vem, respeitosamente à presença de Vossa Excelência, ajuizar".
-3. **R E C L A M A Ç Ã O   T R A B A L H I S T A** em face da(s) reclamada(s), com CNPJ e endereço; depois "Local da prestação de serviços".
+3. **Título** (`<h1>`), **em face de** com a(s) reclamada(s), CNPJ e endereço, e **local da prestação de serviços**.
 4. **Da Comissão de Conciliação Prévia:** bloco fixo.
 5. **Da síntese da reclamatória:** as teses na ordem do catálogo + "Justiça Gratuita" + "Honorários Advocatícios Sucumbenciais".
 6. **Da responsabilidade subsidiária:** só com 2ª reclamada.
 7. **Dos fatos:** contratação, função, saída, salário, jornada e um parágrafo curto por tese, só com fatos do dossiê.
 8. **Tutela de urgência:** só com estabilidade e pedido de reintegração.
-9. **Dos fundamentos:** uma seção numerada por tese (4.1, 4.2, ...), com o texto do banco adaptado aos fatos do caso. Só o dano moral tem narrativa longa, reescrita a partir do dossiê.
+9. **Dos fundamentos:** uma subseção (`<h3>`) por tese, sem número escrito (a numeração é automática), com o texto do banco adaptado aos fatos do caso. Só o dano moral tem narrativa longa, reescrita a partir do dossiê.
 10. **Blocos fixos:** Imposto de renda e recolhimentos previdenciários; Atualização monetária; Justiça gratuita; Sucumbência — honorários advocatícios.
 11. **Levantamento do FGTS:** só se houver FGTS em algum pedido.
 12. **Dos pedidos:** letras A, B, C... sem pular nem repetir. Cada pedido com valor lista a verba principal e os reflexos (`calculo.md`), com os valores da planilha, e termina com `TOTAL ...`. Pedidos sem valor terminam com `DECLARAR`, `EXPEDIR`, `EMITIR`, `NOMEAR` ou `DEFERIR`. Depois os honorários e `SUBTOTAL em <data por extenso> R$ <valor> (<valor por extenso>)`.
 13. **Pleiteia ainda:** bloco fixo, provas A a G, com o valor da causa no item G.
-14. **Fecho e assinatura:** "Termos em que, Pede deferimento." + cidade, "data e assinatura certificadas." + bloco de assinatura do banco.
+14. **Fecho e assinatura:** "Termos em que, Pede deferimento." e "São Paulo, data e assinatura certificadas." (`fecho`), depois nome com OAB e CPF do advogado (`assinatura`). Endereço, e-mail e telefones já estão no rodapé.
 
 Use a linha pontilhada dos exemplos nos itens de valor: `Horas extras ........ R$ 7.338,46;`.
 
