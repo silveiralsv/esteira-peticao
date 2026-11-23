@@ -1,0 +1,7 @@
+# Configuração local: links do Drive do escritório. Nunca vai para o repositório público.
+skills/peticao-inicial/config.local.md
+# Documentos de clientes nunca entram aqui.
+*.xlsx
+*.docx
+*.pdf
+.DS_Store
