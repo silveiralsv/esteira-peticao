@@ -23,8 +23,8 @@ Responda ao usuário em português.
 ## Passo 1. Preparar a rodada
 
 1. Extraia o ID da pasta do link (`/folders/<ID>`). Se o link não for de pasta, pare e peça o link da pasta do cliente.
-2. Liste os filhos da pasta (`parentId = '<ID>'`). Ache as subpastas `O que eu recebo` e `O resultado` (compare sem acento e sem maiúsculas). Se faltar uma, pare e diga qual.
-3. Leia `config.local.md` nesta pasta da skill. Ele tem o link da pasta do banco de teses. Se não existir, pare e diga ao usuário para copiar `config.example.md` para `config.local.md` e preencher o link.
+2. Liste os filhos da pasta (`parentId = '<ID>'`). Ache as subpastas `O que eu recebo` e `O resultado` (compare sem acento e sem maiúsculas). Se faltar `O que eu recebo`, pare e avise. Se faltar `O resultado`, crie a pasta (`create_file` com `contentMimeType: application/vnd.google-apps.folder` e `parentId` = pasta do cliente).
+3. Leia `config.local.md` nesta pasta da skill. Ele tem o link da pasta do banco de teses e o link do modelo de cálculo do escritório (um só para todos os clientes). Se o arquivo ou um dos links faltar, pare e diga ao usuário para copiar `config.example.md` para `config.local.md` e preencher.
 4. Crie o diretório de trabalho: `${TMPDIR:-/tmp}/esteira-peticao/<ID da pasta do cliente>/`. Se já existir de uma rodada interrompida, apague o conteúdo antes.
 5. Se `O resultado` já tem `log.txt`, baixe para o diretório de trabalho. Senão, crie um `log.txt` vazio.
 6. A rodada é N = (número de linhas `===== Rodada` no log) + 1. Acrescente:
@@ -41,7 +41,7 @@ Responda ao usuário em português.
 Chame o subagente `peticao-verificador`. Passe no prompt:
 
 - o ID da pasta do cliente e os IDs de `O que eu recebo` e `O resultado`;
-- o link do banco de teses;
+- o link do banco de teses e o ID do modelo de cálculo;
 - o caminho do diretório de trabalho e o número da rodada;
 - o caminho absoluto de `referencia/`.
 

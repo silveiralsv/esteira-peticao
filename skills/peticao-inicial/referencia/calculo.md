@@ -1,6 +1,6 @@
 # Regras de cálculo
 
-Estas regras saem da petição de referência e das 13 petições do banco de teses. O modelo de planilha da pasta `O que eu recebo` é a fonte das contas de cada bloco (Q1). Quando a planilha e esta página divergirem, vale a planilha e o Validador escreve uma nota.
+Estas regras saem da petição de referência e das 13 petições do banco de teses. O modelo de cálculo do escritório (um só para todos os clientes, link em `config.local.md`) é a fonte das contas de cada bloco (Q1). Quando a planilha e esta página divergirem, vale a planilha e o Validador escreve uma nota.
 
 ## Fontes dos parâmetros
 
@@ -74,7 +74,7 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 
 ## Planilha
 
-- Copie o modelo de `O que eu recebo` e preencha só as células de entrada dos blocos das teses escolhidas. Descubra essas células lendo a planilha com `openpyxl` (rótulos e fórmulas). Registre no log cada célula preenchida.
+- Baixe o modelo de cálculo e preencha a cópia local só as células de entrada dos blocos das teses escolhidas. Descubra essas células lendo a planilha com `openpyxl` (rótulos e fórmulas). Registre no log cada célula preenchida.
 - Limpe as células de entrada que sobraram de outro caso (nome de paradigma, datas, avos e dias do cabeçalho). Se uma fórmula der `#REF!`, não use o bloco: calcule numa aba extra e registre no log.
 - Teses sem bloco no modelo vão numa aba extra `Cálculos extras`, uma linha por item, com a fórmula visível.
 - Para ler os totais calculados, suba a planilha (ela vira Google Sheet e calcula as fórmulas) e leia com `read_file_content`.

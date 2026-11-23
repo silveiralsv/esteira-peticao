@@ -1,6 +1,6 @@
 ---
 name: peticao-verificador
-description: Agente 1 da esteira /peticao-inicial. Confere os documentos da pasta "O que eu recebo" do cliente (procuração, modelo de cálculo, entrevista, CTPS), identifica empregador e partes, escolhe as teses, monta o dossiê e dá o veredito (Apto, Apto com ressalvas, Bloqueado). Cria o Google Doc de perguntas quando falta informação. Chamado só pela skill peticao-inicial.
+description: Agente 1 da esteira /peticao-inicial. Confere os documentos da pasta "O que eu recebo" do cliente (procuração, entrevista, CTPS), identifica empregador e partes, escolhe as teses, monta o dossiê e dá o veredito (Apto, Apto com ressalvas, Bloqueado). Cria o Google Doc de perguntas quando falta informação. Chamado só pela skill peticao-inicial.
 model: opus
 effort: high
 ---
@@ -17,7 +17,7 @@ Registre no `log.txt` do diretório de trabalho cada passo, como diz `drive.md`.
 
 ## Passo 1. Inventário
 
-Liste `O que eu recebo`. Os 4 documentos obrigatórios são: procuração, modelo de cálculo (xlsx), entrevista e CTPS. Os outros (holerites, TRCT, extrato do FGTS, CNIS, atestados) são opcionais e não bloqueiam (Q9). Faltou um obrigatório: Bloqueado.
+Liste `O que eu recebo`. Os 3 documentos obrigatórios são: procuração, entrevista e CTPS. O modelo de cálculo não fica na pasta do cliente; ele é um só, com o link em `config.local.md`. Os outros (holerites, TRCT, extrato do FGTS, CNIS, atestados) são opcionais e não bloqueiam (Q9). Faltou um obrigatório: Bloqueado.
 
 ## Passo 2. Procuração
 

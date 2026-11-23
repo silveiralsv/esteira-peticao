@@ -22,7 +22,7 @@ Para cada tese do dossiê, leia no banco de teses o exemplo indicado (`read_file
 
 ## Passo 2. Planilha
 
-1. Baixe o modelo de cálculo de `O que eu recebo` para o diretório de trabalho (`drive.md`).
+1. Baixe o modelo de cálculo (o ID vem do orquestrador, de `config.local.md`) para o diretório de trabalho (`drive.md`). Nunca altere o modelo no Drive; trabalhe sempre na cópia local.
 2. Preencha com `openpyxl` só as células de entrada das teses do dossiê. Limpe as sobras de outro caso. Teses sem bloco vão na aba `Cálculos extras` (`calculo.md`).
 3. Salve como `calculo.xlsx`, suba para `O resultado` com o título `CÁLCULO <NOME DO CLIENTE> - rodada N` e leia os totais calculados.
 4. Registre no log cada célula preenchida e o título e o ID do arquivo criado.

@@ -10,8 +10,10 @@ Esteira de agentes do Claude Code que escreve a **petição inicial trabalhista*
 
 A pasta do cliente tem duas subpastas:
 
-- `O que eu recebo`: sempre tem procuração, modelo de cálculo (xlsx), entrevista e CTPS. Outros documentos são opcionais.
-- `O resultado`: onde a esteira grava tudo.
+- `O que eu recebo`: sempre tem procuração, entrevista e CTPS. Outros documentos são opcionais.
+- `O resultado`: onde a esteira grava tudo. Se não existir, a esteira cria.
+
+O modelo de cálculo (xlsx zerado) é um só para todos os clientes e fica no Drive do escritório. O link dele vai em `config.local.md`. A esteira nunca altera o modelo; ela trabalha numa cópia.
 
 Se faltar informação, a esteira cria o Doc `PERGUNTAS <NOME DO CLIENTE>`. Você ou o advogado do caso responde o que puder, marca o que vai para o escritório e roda o mesmo comando de novo.
 
@@ -45,7 +47,7 @@ git clone git@github.com:silveiralsv/esteira-peticao.git ~/www/esteira-peticao
 cd ~/www/esteira-peticao
 ./install.sh
 cp skills/peticao-inicial/config.example.md skills/peticao-inicial/config.local.md
-# preencha em config.local.md o link da pasta do banco de teses
+# preencha em config.local.md o link da pasta do banco de teses e o link do modelo de cálculo
 ```
 
 O `install.sh` cria links simbólicos em `~/.claude` (ou em `$CLAUDE_CONFIG_DIR`):
@@ -75,7 +77,7 @@ skills/peticao-inicial/config.example.md
 
 | | Decisão |
 |---|---|
-| Q1 | O modelo de cálculo de `O que eu recebo` é copiado e preenchido a cada petição. |
+| Q1 | Um modelo de cálculo zerado, o mesmo para todos os clientes, é copiado e preenchido a cada petição. |
 | Q2 | Tese sem fato do caso não entra e vira pergunta. Só bloqueia se for a tese principal. |
 | Q3 | O banco de teses é uma pasta do Drive com petições do escritório. |
 | Q4 | Quando a entrevista e a CTPS divergem, vale a CTPS. |
