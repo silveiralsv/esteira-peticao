@@ -2,7 +2,7 @@
 """Gera a petição .docx no papel timbrado do escritório a partir do HTML do Redator.
 
 Uso:
-    uv run --with python-docx python3 gerar_docx.py <modelo.docx> <peticao.html> <saida.docx>
+    uv run --with python-docx --with pillow python3 gerar_docx.py <modelo.docx> <peticao.html> <saida.docx>
 
 O modelo é um .docx com cabeçalho, rodapé, estilos e um parágrafo de exemplo por
 papel, cujo texto é só "{{papel}}" (ex.: "{{corpo}}"). Cada bloco do HTML copia a
@@ -16,6 +16,8 @@ from html.parser import HTMLParser
 from docx import Document
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+
+from pontilhado import pontos
 
 TAG_PAPEL = {"h1": "titulo", "h2": "secao", "h3": "subsecao", "li": "lista", "p": "corpo"}
 BLOCOS = set(TAG_PAPEL) | {"blockquote"}
@@ -150,8 +152,10 @@ def gerar(modelo, html, saida):
             negrito = papel != "item" or all("b" in m for _, m in trechos)
             marcas = {"b"} if negrito else set()
             if len(partes) >= 2:
-                p.append(novo_run(" ".join(partes[:-1]).strip(), marcas, base_r))
-                p.append(novo_run(partes[-1].strip(), marcas, base_r, tab=True))
+                # O Google Docs perde o pontilhado da tabulação: os pontos vão no texto.
+                rotulo, valor = " ".join(partes[:-1]).strip(), partes[-1].strip()
+                p.append(novo_run(f"{rotulo} {pontos(rotulo, valor, negrito)}", marcas, base_r))
+                p.append(novo_run(valor, marcas, base_r, tab=True))
             else:
                 p.append(novo_run(inteiro, marcas, base_r))
         else:

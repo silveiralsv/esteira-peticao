@@ -7,8 +7,11 @@ Estas regras saem da petição de referência e das petições do banco de teses
 | Parâmetro | Fonte | Regra |
 |---|---|---|
 | Admissão, saída, salário, cargo, CNPJ | CTPS | Q4: a CTPS vence a entrevista. A divergência vai para o log. |
-| Jornada, escala, minutos extras, frequência | Entrevista | — |
-| Adicional de horas extras, pisos e benefícios | CCT da categoria | Q6: busque na internet (sindicato ou Mediador do MTE) e cite o endereço. Se não achar, use 50% (art. 7º, XVI, CF) e crie uma pergunta. |
+| Local da prestação de serviços | Entrevista | Sempre o da entrevista, mesmo quando é diferente do endereço do estabelecimento na CTPS. Aqui Q4 não vale. O endereço da reclamada (em face de) continua o da CTPS. |
+| Jornada, escala, minutos extras, frequência | Entrevista | Faixa ("15 a 20 minutos"): o maior valor. Data só com o mês: use o mês, sem pergunta. |
+| Adicional de horas extras | Função | Enfermagem (auxiliar, técnico ou enfermeiro): 90%. Outras funções: 50%. Não precisa de CCT nem de pergunta. |
+| Adicional noturno | Planilha | 20%, fixo no modelo de cálculo. |
+| Pisos e benefícios | CCT da categoria | Q6: busque na internet (sindicato ou Mediador do MTE) e cite o endereço. Se não achar, crie uma pergunta. |
 | Salário mínimo | Planilha | Use o valor da planilha. Se ele não for o do ano corrente, use o valor oficial e cite a fonte. |
 | Data de referência | Dia da rodada | É a data do "SUBTOTAL em ..." e a base da prescrição. |
 
@@ -18,8 +21,22 @@ Estas regras saem da petição de referência e das petições do banco de teses
 - **Prescrição quinquenal:** o período começa no maior entre a admissão e (data de referência − 5 anos).
 - **Fim do período:** a saída. Se a pessoa ainda trabalha, a data de referência.
 - **Meses:** conte os meses do período. Fração de 15 dias ou mais vale 1 mês.
-- **Meses trabalhados:** nas verbas que dependem de trabalho efetivo (horas extras, noturno, feriados, plantões), tire os meses de férias e de afastamento.
-- **Hora noturna reduzida:** quando o texto pedir a hora noturna reduzida (52 minutos e 30 segundos), a conta multiplica as horas de relógio por 60/52,5.
+- **Meses trabalhados:** nas verbas que dependem de trabalho efetivo (horas extras, noturno, feriados, plantões), conte os meses de férias como meses trabalhados (o escritório confirmou esse cálculo). Tire só os meses de afastamento.
+
+## Horas extras: quanto contar
+
+Conte só o tempo extra que a entrevista confirma. Nunca presuma, estime nem invente quantidade.
+
+1. **Minutos todo dia:** "excedia 15 minutos por dia" = 15 minutos em cada dia trabalhado, pela escala informada (6x1, 5x2, 12x36 etc.).
+2. **Só alguns dias:** "2 vezes por semana", "4 dias por mês" = só nessa frequência.
+3. **Extra a mais em alguns dias:** "além disso, 2 horas a mais em dois dias por mês" = some essas horas e divida pelos dias trabalhados do mês. O resultado entra na média diária, junto com os minutos de todo dia.
+4. **Relato genérico:** extra sem duração ou sem frequência (ex.: "às vezes ficava 2 a 3 horas a mais", sem dizer quantas vezes) fica fora da conta. O fato pode ficar no texto.
+
+## Prorrogação do adicional noturno
+
+- A conta e o pedido são só das horas depois das 05h00: saída − 05h00. Saída às 06h00 = 1 hora por plantão; às 07h00 = 2 horas; às 08h00 = 3 horas.
+- Use horas de relógio. Não converta para hora noturna reduzida, mesmo que o texto do modelo cite a hora reduzida.
+- Só nos meses de plantão noturno.
 
 ## Reflexos
 

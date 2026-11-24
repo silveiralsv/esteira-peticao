@@ -96,6 +96,7 @@ skills/peticao-inicial/referencia/
   formatacao.md                      papéis do HTML da petição e o papel timbrado
 skills/peticao-inicial/scripts/gerar_docx.py   gera o docx no papel timbrado a partir do HTML
 skills/peticao-inicial/scripts/texto_sugerido.py  texto do Google Doc com as sugestões aceitas, com os índices
+skills/peticao-inicial/scripts/pontilhado.py     pontilhado das linhas de valor (o Google Docs não tem tabulação com pontos)
 skills/peticao-inicial/config.example.md
 ```
 

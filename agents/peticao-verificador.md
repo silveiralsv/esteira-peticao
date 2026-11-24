@@ -35,16 +35,17 @@ A carteira pode ter vários contratos. Ache o contrato com o empregador da entre
 
 ## Passo 4. Entrevista
 
-1. Leia cada seção. Para cada seção de tese do catálogo, veja se há fato concreto que sustente a tese.
-2. Campo em branco ou "Avaliar" não é fato. Vira pergunta.
-3. Aplique Q2 como está em `teses.md`: tese sem fato não entra. Se for a tese principal, o veredito é Bloqueado.
+1. Leia cada seção. Para cada seção de tese do catálogo, veja se a entrevista traz o pedido: seção preenchida, "Pedir" ou fato concreto. Siga "Como o escritório decide" em `teses.md`.
+2. Seção em branco: a tese fica fora, sem pergunta. "Avaliar": vira pergunta.
+3. Aplique Q2 como está em `teses.md`. Se a tese principal estiver sem fato, o veredito é Bloqueado.
 4. Para os danos morais, liste os fatos com quem, quando e o quê. Não copie nomes de terceiros para o log.
 
 ## Passo 5. Partes
 
-- **1ª reclamada:** razão social da entrevista ou da CTPS, com o CNPJ e o endereço do **estabelecimento** onde a pessoa trabalhava (CTPS), não os da matriz.
+- **1ª reclamada:** razão social da entrevista ou da CTPS, com o CNPJ e o endereço do **estabelecimento** da CTPS, não os da matriz.
 - **2ª reclamada:** só se a seção "RESPONSABILIDADE SUBSIDIÁRIA" da entrevista indicar um tomador (com ou sem a palavra "Sim"). Se o tomador for ente público, busque CNPJ e endereço da sede e cite a fonte (Q6).
-- **Local da prestação** e **vara:** a vara do local da prestação (art. 651 da CLT). Em São Paulo capital, indique a zona (Centro, Leste, Sul, Oeste, Norte) pelo endereço e cite a fonte.
+- **Local da prestação:** sempre o da entrevista, que pode ser diferente do endereço da CTPS. Aqui Q4 não vale. Se a entrevista dá só o nome do lugar (ex.: um hospital), busque o endereço na internet e cite a fonte.
+- **Vara:** a do local da prestação (art. 651 da CLT). Em São Paulo capital, indique a zona (Centro, Leste, Sul, Oeste, Norte) pelo endereço e cite a fonte.
 
 ## Passo 6. Cruzamento
 
@@ -52,11 +53,11 @@ Compare entrevista, CTPS e procuração campo a campo. Em cada divergência, apl
 
 ## Passo 7. Parâmetros
 
-Monte a tabela de parâmetros de cada tese escolhida (salário, jornada, minutos, frequência, adicional da CCT, % pago de insalubridade, meses, aviso proporcional). Busque a CCT como diz `calculo.md`. Parâmetro ambíguo vira pergunta e a tese segue com a estimativa mais conservadora, marcada como estimativa.
+Monte a tabela de parâmetros de cada tese escolhida (salário, jornada, minutos, frequência, adicional de horas extras, % pago de insalubridade, meses, aviso proporcional), com as regras de `calculo.md`. Parâmetro que nenhuma regra resolve: use a leitura mais favorável ao cliente que os documentos permitem, marque como estimativa e crie uma pergunta só se a resposta mudar o valor.
 
 ## Passo 8. Rodada seguinte
 
-Se o log já tem rodadas anteriores, leia o Doc de perguntas mais recente em `O resultado`. Use as respostas como fatos, com a fonte `Doc de perguntas, rodada N`. Pergunta marcada `Responde: escritório` e ainda sem resposta continua pendente.
+Se o log já tem rodadas anteriores, leia o Doc de perguntas mais recente em `O resultado`. Use as respostas como fatos, com a fonte `Doc de perguntas, rodada N`. Resposta que é uma regra geral do escritório já pode estar em `referencia/`; siga a regra. Pergunta sem resposta que uma regra de `referencia/` já resolve está fechada. As outras continuam pendentes.
 
 Na rodada de ajuste (o orquestrador passa o ID da petição), a petição já existe e não é reescrita. Leia o texto dela com `read_file_content` e `includeComments: true`, e grave `mudancas.md` no diretório de trabalho: cada coisa que a petição precisa mudar por causa de uma resposta ou de um documento novo. Para cada item:
 

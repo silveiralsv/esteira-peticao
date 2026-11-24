@@ -71,6 +71,8 @@ Os conectores Google Docs (`mcp__claude_ai_Google_Docs__*`) e Google Sheets (`mc
 
 O comentário fica ancorado no trecho e aparece com o nome da conta do usuário. Por isso todo comentário da esteira começa com `[ESTEIRA]`. O conector não responde dentro de uma thread que já existe, nem resolve ou apaga comentários.
 
+**Aceitar as sugestões.** O conector não aceita nem rejeita sugestão. Só quando o usuário pedir: no Google Docs, Ferramentas > Rever edições sugeridas > Aceitar tudo (pelo Chrome, se o usuário quiser). Antes, confira que todas as sugestões são da esteira e não do advogado. Os comentários ancorados num trecho apagado ficam no histórico como "conteúdo original eliminado".
+
 **Planilha.** `update_values` muda células do Sheet no lugar; as fórmulas recalculam. Leia o resultado com `get_values`. O Sheets não tem modo sugestão: registre no log cada célula mudada, com o antes e o depois. O histórico de versões do Sheet também guarda a mudança.
 
 ## Títulos

@@ -29,7 +29,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
    - Confira que o rótulo de cada linha (datas, avos, dias) bate com o valor.
 5. **Restos de modelo.** Procure cada item da lista de `teses.md`, cidades e nomes de outro caso, `#REF!`, letras de pedido puladas ou repetidas, "reclamada" e "reclamadas" trocados, inciso do art. 223-G que não comporta o valor.
 6. **Coerência.** Cada tese da síntese tem fato, fundamento e pedido, e o contrário. O valor da causa é o mesmo no SUBTOTAL e no item G. A prescrição está certa.
-7. **Forma.** Dígitos faltando em valores, pontuação dupla, valor por extenso igual ao numérico.
+7. **Forma.** Dígitos faltando em valores, pontuação dupla, valor por extenso igual ao numérico. As "Regras da advogada" de `formatacao.md`: pontilhado visível em cada linha de cálculo, TOTAL e fim de pedido em negrito, título com fundo na linha inteira.
 
 ## Como corrigir (Q5)
 
@@ -41,6 +41,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
   ```
 
 - **Ponto de julgamento** (tese fraca, critério de tese com um exemplo só, estimativa): não reescreva. Deixe uma nota no mesmo formato. Para tese com um exemplo só, a nota diz "tese nova, confira o critério".
+- **Sem nota contra as regras do escritório.** Não escreva nota contra o que "Como o escritório decide" (`teses.md`) e `calculo.md` mandam fazer: tese que a entrevista pede, maior valor da faixa, insalubridade e periculosidade juntas, responsabilidade subsidiária sem prova, levantamento do FGTS, horas de relógio na prorrogação noturna, valor padrão do modelo de cálculo (ex.: 10 feriados por ano). Nota é para erro, fato sem fonte e dúvida que nenhuma regra resolve.
 - Registre cada correção no log: `Validador | correção · <onde> · antes: <x> · depois: <y>`.
 
 ## Saída

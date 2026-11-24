@@ -70,7 +70,7 @@ Para cada comentário do tipo regra, acrescente a regra ao arquivo certo de `ref
 - conta, percentual, período: `calculo.md`;
 - negrito, pontilhado, forma do pedido: `formatacao.md`.
 
-Escreva a regra de forma geral, sem nome, cidade, empresa, data ou valor do cliente. Este repositório é público. Se a regra contradiz uma regra que já existe, troque a antiga e registre a troca no log. Não faça commit.
+Escreva a regra de forma geral, sem nome, cidade, empresa, data ou valor do cliente. Este repositório é público. Antes de gravar, procure a regra em `referencia/`: se ela já está lá (o orquestrador pode ter gravado), não repita; só aplique. Se a regra contradiz uma regra que já existe, troque a antiga e registre a troca no log. Não faça commit.
 
 ## 6. Responder os comentários
 
