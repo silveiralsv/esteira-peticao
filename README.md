@@ -22,11 +22,33 @@ Se faltar informação, a esteira cria o Doc `PERGUNTAS <NOME DO CLIENTE>`. Voc�
 | Etapa | Quem | Faz | Grava em `O resultado` |
 |---|---|---|---|
 | 1 | `peticao-verificador` | Confere os documentos, a procuração e a entrevista, identifica as partes, escolhe as teses e dá o veredito: Apto, Apto com ressalvas ou Bloqueado | Doc de perguntas, se precisar |
-| 2 | `peticao-redator` | Preenche o modelo de cálculo e escreve a petição com a estrutura e os textos do banco de teses | `CÁLCULO <NOME> - rodada N` |
-| 3 | `peticao-validador` | Confere fatos e contas contra os documentos, corrige erros objetivos e deixa notas para o advogado | `PETIÇÃO INICIAL <NOME> - rodada N` e `RELATÓRIO DE VALIDAÇÃO <NOME> - rodada N` |
+| 2 | `peticao-redator` | Só na primeira rodada. Preenche o modelo de cálculo e escreve a petição com a estrutura e os textos do banco de teses | `CÁLCULO <NOME>` |
+| 2A | `peticao-revisor` | Nas rodadas de ajuste, no lugar do Redator. Aplica no mesmo Doc e na mesma planilha, em modo sugestão, as mudanças das respostas e os comentários do advogado | nada novo: muda a petição e a planilha no lugar |
+| 3 | `peticao-validador` | Confere fatos e contas contra os documentos, corrige erros objetivos e deixa notas para o advogado | `PETIÇÃO INICIAL <NOME>` (só na primeira rodada) e `RELATÓRIO DE VALIDAÇÃO <NOME> - rodada N` |
 | — | skill `peticao-inicial` | Orquestra as rodadas | `log.txt` com data e hora de Brasília, agente e evento |
 
 Se o veredito for Bloqueado, a rodada para depois do Verificador.
+
+### Uma petição por cliente
+
+A primeira rodada cria a petição e a planilha. Depois disso a esteira nunca cria outra nem recria: o advogado comenta no Doc, e as rodadas seguintes (com as perguntas respondidas) mudam o mesmo Doc e a mesma planilha, em modo sugestão. O link não muda e os comentários ficam. Na rodada de ajuste, o Verificador grava em `mudancas.md` o que as respostas mudam, e o Revisor aplica.
+
+### Revisão com os comentários do advogado
+
+O advogado revisa a petição no próprio Google Doc e deixa comentários. Depois:
+
+```
+/peticao-inicial <link do Google Doc da petição>
+```
+
+O agente `peticao-revisor` lê os comentários abertos e trabalha no mesmo Doc. O link não muda e os comentários ficam.
+
+- Cada correção entra como **sugestão**, que o advogado aceita ou rejeita. Valores mudam também na planilha, no lugar.
+- Cada comentário tratado ganha um comentário `[ESTEIRA]` no mesmo trecho, dizendo o que foi feito. O conector não responde dentro da thread do advogado.
+- Comentário com "sempre", "nunca" ou "em todas as petições" vira regra em `referencia/`, para as próximas petições. Revise o `git diff` e faça o commit.
+- Cada comentário, célula mudada e regra nova vai para o `log.txt`.
+
+Precisa do conector Google Workspace (Google Docs e Google Sheets), além do Google Drive.
 
 ### Modelo e esforço
 
@@ -57,6 +79,7 @@ O `install.sh` cria links simbólicos em `~/.claude` (ou em `$CLAUDE_CONFIG_DIR`
 ~/.claude/agents/peticao-verificador.md      -> agents/peticao-verificador.md
 ~/.claude/agents/peticao-redator.md          -> agents/peticao-redator.md
 ~/.claude/agents/peticao-validador.md        -> agents/peticao-validador.md
+~/.claude/agents/peticao-revisor.md          -> agents/peticao-revisor.md
 ```
 
 Ele não apaga nem substitui nada. Se um destino já existe e não é o link certo, ele avisa e deixa como está. Como são links, um `git pull` já atualiza a esteira.
@@ -64,7 +87,7 @@ Ele não apaga nem substitui nada. Se um destino já existe e não é o link cer
 ## Estrutura
 
 ```
-agents/                              os 3 agentes
+agents/                              os 3 agentes da rodada e o Revisor
 skills/peticao-inicial/SKILL.md      o orquestrador
 skills/peticao-inicial/referencia/
   teses.md                           quando cada tese entra, fatos mínimos, cálculo
@@ -72,6 +95,7 @@ skills/peticao-inicial/referencia/
   drive.md                           como ler e gravar no Drive, e o formato do log
   formatacao.md                      papéis do HTML da petição e o papel timbrado
 skills/peticao-inicial/scripts/gerar_docx.py   gera o docx no papel timbrado a partir do HTML
+skills/peticao-inicial/scripts/texto_sugerido.py  texto do Google Doc com as sugestões aceitas, com os índices
 skills/peticao-inicial/config.example.md
 ```
 

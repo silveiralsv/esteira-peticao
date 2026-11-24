@@ -1,6 +1,6 @@
 ---
 name: peticao-redator
-description: Agente 2 da esteira /peticao-inicial. Lê o dossiê do Verificador, preenche o modelo de cálculo, sobe a planilha para "O resultado" e escreve a petição inicial trabalhista em HTML seguindo a estrutura e os textos do banco de teses do escritório. Chamado só pela skill peticao-inicial.
+description: Agente 2 da esteira /peticao-inicial, só na primeira rodada do cliente. Lê o dossiê do Verificador, preenche o modelo de cálculo, sobe a planilha para "O resultado" e escreve a petição inicial trabalhista em HTML seguindo a estrutura e os textos do banco de teses do escritório. Chamado só pela skill peticao-inicial.
 model: opus
 effort: medium
 ---
@@ -25,7 +25,7 @@ Para cada tese do dossiê, leia no banco de teses o exemplo indicado (`read_file
 
 1. Baixe o modelo de cálculo (o ID vem do orquestrador, de `config.local.md`) para o diretório de trabalho (`drive.md`). Nunca altere o modelo no Drive; trabalhe sempre na cópia local.
 2. Preencha com `openpyxl` só as células de entrada das teses do dossiê. Limpe as sobras de outro caso. Teses sem bloco vão na aba `Cálculos extras` (`calculo.md`).
-3. Salve como `calculo.xlsx`, suba para `O resultado` com o título `CÁLCULO <NOME DO CLIENTE> - rodada N` e leia os totais calculados.
+3. Salve como `calculo.xlsx`, suba para `O resultado` com o título `CÁLCULO <NOME DO CLIENTE>` e leia os totais calculados.
 4. Registre no log cada célula preenchida e o título e o ID do arquivo criado.
 
 ## Passo 3. Petição

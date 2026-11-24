@@ -58,6 +58,16 @@ Monte a tabela de parâmetros de cada tese escolhida (salário, jornada, minutos
 
 Se o log já tem rodadas anteriores, leia o Doc de perguntas mais recente em `O resultado`. Use as respostas como fatos, com a fonte `Doc de perguntas, rodada N`. Pergunta marcada `Responde: escritório` e ainda sem resposta continua pendente.
 
+Na rodada de ajuste (o orquestrador passa o ID da petição), a petição já existe e não é reescrita. Leia o texto dela com `read_file_content` e `includeComments: true`, e grave `mudancas.md` no diretório de trabalho: cada coisa que a petição precisa mudar por causa de uma resposta ou de um documento novo. Para cada item:
+
+```
+<n>. <onde na petição: seção, pedido ou parágrafo> — <o que muda: fato, tese que entra ou sai, parâmetro, pedido>
+Fonte: <Doc de perguntas, rodada N, pergunta X / nome do documento>
+Planilha: <célula ou parâmetro que muda, ou "não muda">
+```
+
+Não liste o que os comentários do advogado pedem; o Revisor lê os comentários direto no Doc. Se nada mudar, grave `mudancas.md` com a linha `Nenhuma mudança por respostas ou documentos novos.`
+
 ## Passo 9. Veredito
 
 - **Apto:** documentos completos, todas as teses com fato, sem pergunta pendente.

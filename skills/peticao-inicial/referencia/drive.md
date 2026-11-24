@@ -39,15 +39,49 @@ Calcule o hash com `shasum -a 256 <arquivo> | cut -d' ' -f1`.
 | Planilha | `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | deixe converter (vira Google Sheet, que calcula as fórmulas) |
 | `log.txt` | `text/plain` | `disableConversionToGoogleType: true` |
 
-O conector não edita o conteúdo de um arquivo que já existe. Para mudar um arquivo, crie a versão nova e só então mande a antiga para a lixeira (`trash_file`). Só faça isso com arquivos que o fluxo criou.
+O conector Google Drive não edita o conteúdo de um arquivo que já existe. Dentro de uma rodada, para mudar um arquivo que a própria rodada criou, crie a versão nova e só então mande a antiga para a lixeira (`trash_file`).
+
+Depois que a rodada termina, a petição e a planilha podem ter comentários do advogado. Nunca recrie nem mande para a lixeira esses arquivos: os comentários se perdem. Mude no lugar, como diz "Editar no lugar".
+
+## Editar no lugar (Google Docs e Google Sheets)
+
+Os conectores Google Docs (`mcp__claude_ai_Google_Docs__*`) e Google Sheets (`mcp__claude_ai_Google_Sheets__*`) mudam o arquivo que já existe. O link fica o mesmo. Se estiverem adiados, carregue com ToolSearch. Se não existirem, pare e diga ao usuário para ligar o conector Google Workspace.
+
+**Ler comentários.** `read_file_content` com `includeComments: true` dá o texto, as threads (`commentThreads`, com id, autor, texto e status) e o trecho comentado entre `<comment_start id=…>` e `<comment_end id=…>`. Esse texto não serve para índices.
+
+**Ler índices.** `read_doc` dá cada trecho com `startIndex` e `endIndex` e o `revisionId`. A resposta é grande; se for salva em arquivo, use o script `docs_index.py` (`outline` e `find`) da skill `google-workspace` em vez de ler o JSON inteiro.
+
+**Mudar o texto em modo sugestão.** `update_doc` com:
+
+```json
+"writeControl": {"writeMode": "SUGGEST", "requiredRevisionId": "<revisionId do último read_doc>"}
+```
+
+- Cada mudança fica como sugestão que o advogado aceita ou rejeita. É o registro do que a esteira fez.
+- Para trocar um trecho que aparece uma vez: `replaceAllText` com o texto exato. Para os outros casos: `deleteContentRange` e `insertText` nos índices do `read_doc`, do fim do documento para o começo.
+- Mude só as palavras que mudam. Apagar o trecho inteiro em que um comentário está ancorado tira o comentário do texto.
+- Se o Doc mudou depois da leitura, o conector recusa o lote inteiro. Leia de novo e refaça o lote. Nunca tire o `requiredRevisionId`.
+- Texto sugerido e texto com exclusão sugerida ocupam índices até alguém aceitar ou rejeitar. Não escreva dentro deles.
+
+**Comentar.** `update_doc` com:
+
+```json
+{"insertComment": {"content": "[ESTEIRA] ...", "range": {"startIndex": 120, "endIndex": 180}}}
+```
+
+O comentário fica ancorado no trecho e aparece com o nome da conta do usuário. Por isso todo comentário da esteira começa com `[ESTEIRA]`. O conector não responde dentro de uma thread que já existe, nem resolve ou apaga comentários.
+
+**Planilha.** `update_values` muda células do Sheet no lugar; as fórmulas recalculam. Leia o resultado com `get_values`. O Sheets não tem modo sugestão: registre no log cada célula mudada, com o antes e o depois. O histórico de versões do Sheet também guarda a mudança.
 
 ## Títulos
 
 - `PERGUNTAS <NOME DO CLIENTE> - rodada N`
-- `CÁLCULO <NOME DO CLIENTE> - rodada N`
-- `PETIÇÃO INICIAL <NOME DO CLIENTE> - rodada N`
+- `CÁLCULO <NOME DO CLIENTE>`: um por cliente, criado na primeira rodada e depois mudado no lugar
+- `PETIÇÃO INICIAL <NOME DO CLIENTE>`: um por cliente, criado na primeira rodada e depois mudado no lugar
 - `RELATÓRIO DE VALIDAÇÃO <NOME DO CLIENTE> - rodada N`
 - `log.txt`
+
+Petições e planilhas antigas podem ter ` - rodada 1` no fim do título. O orquestrador tira o sufixo na rodada seguinte.
 
 `<NOME DO CLIENTE>` é o nome da procuração, em maiúsculas.
 
