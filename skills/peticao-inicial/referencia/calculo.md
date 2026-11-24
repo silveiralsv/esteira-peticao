@@ -11,7 +11,9 @@ Estas regras saem da petição de referência e das petições do banco de teses
 | Jornada, escala, minutos extras, frequência | Entrevista | Faixa ("15 a 20 minutos"): o maior valor. Data só com o mês: use o mês, sem pergunta. |
 | Adicional de horas extras | Função | Enfermagem (auxiliar, técnico ou enfermeiro): 90%. Outras funções: 50%. Não precisa de CCT nem de pergunta. |
 | Adicional noturno | Planilha | 20%, fixo no modelo de cálculo. |
-| Pisos e benefícios | CCT da categoria | Q6: busque na internet (sindicato ou Mediador do MTE) e cite o endereço. Se não achar, crie uma pergunta. |
+| Pisos e benefícios | CCT da categoria | Q6: busque na internet (sindicato ou Mediador do MTE) e cite o endereço. Se não achar, crie uma pergunta (exceto a diferença salarial, na linha abaixo). |
+| Diferença salarial sem valor na entrevista (desvio de função e parecidas) | CCT da categoria ou lei | Piso da função exercida − salário, sem pergunta. Sem CCT com o piso, use o piso legal da profissão. |
+| Frequência "com frequência" sem número | Regra do escritório | Pelo menos 3 ocorrências, nunca uma só. Exceção expressa à regra 4 de "Horas extras: quanto contar" e a "nunca invente frequência" (`teses.md`). Número dado pela entrevista ou pelo advogado vence o padrão. |
 | Salário mínimo | Planilha | Use o valor da planilha. Se ele não for o do ano corrente, use o valor oficial e cite a fonte. |
 | Data de referência | Dia da rodada | É a data do "SUBTOTAL em ..." e a base da prescrição. |
 
@@ -27,7 +29,7 @@ Estas regras saem da petição de referência e das petições do banco de teses
 
 Conte só o tempo extra que a entrevista confirma. Nunca presuma, estime nem invente quantidade.
 
-1. **Minutos todo dia:** "excedia 15 minutos por dia" = 15 minutos em cada dia trabalhado, pela escala informada (6x1, 5x2, 12x36 etc.).
+1. **Minutos todo dia:** "excedia 15 minutos por dia" = 15 minutos em cada dia trabalhado, pela escala informada (6x1, 5x2, 12x36 etc.). Some todos os minutos que a entrevista dá para o mesmo dia ou plantão: chegada antes do horário, saída depois do horário, troca de uniforme ou passagem de plantão depois do ponto.
 2. **Só alguns dias:** "2 vezes por semana", "4 dias por mês" = só nessa frequência.
 3. **Extra a mais em alguns dias:** "além disso, 2 horas a mais em dois dias por mês" = some essas horas e divida pelos dias trabalhados do mês. O resultado entra na média diária, junto com os minutos de todo dia.
 4. **Relato genérico:** extra sem duração ou sem frequência (ex.: "às vezes ficava 2 a 3 horas a mais", sem dizer quantas vezes) fica fora da conta. O fato pode ficar no texto.
@@ -60,6 +62,7 @@ Sobre a verba principal X, com 2 casas decimais em cada linha:
 
 Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da justa causa, vínculo) ou quando a rescisão não foi paga.
 
+- **Sem TRCT:** calcule só a verba que a entrevista aponta como não paga (ex.: férias vencidas). Não acrescente verba proporcional ou outra verba que a entrevista não cita.
 - **Aviso prévio proporcional:** 30 dias + 3 dias por ano completo de serviço, até 90 dias. O tempo do aviso conta para completar o ano (OJ 82 da SDI-1). Ex.: 3 anos e 11 meses de contrato + 30 dias de aviso = 4 anos completos, então 42 dias.
 - **Valor do aviso:** salário / 30 × dias.
 - **Reflexos do aviso:** 13º = valor / 12 × (dias / 30); férias e 1/3 da mesma forma.

@@ -2,7 +2,7 @@
 
 Todas as operações usam as ferramentas do conector Google Drive (`mcp__claude_ai_Google_Drive__*`). Se estiverem adiadas, carregue com ToolSearch antes de usar.
 
-**Arquivos locais:** grave tudo (downloads, textos extraídos, scripts, HTML) só no diretório de trabalho da rodada. Nunca use outra pasta, nem o scratchpad da sessão. O orquestrador apaga o diretório de trabalho no fim, e ele tem dados de clientes.
+**Arquivos locais:** grave tudo (downloads, textos extraídos, scripts, HTML) só no diretório de trabalho da rodada. Nunca use outra pasta. A única exceção é a cópia temporária para subir um arquivo (ver "Subir um arquivo"). O orquestrador apaga o diretório de trabalho no fim, e ele tem dados de clientes.
 
 ## Ler
 
@@ -31,6 +31,11 @@ base64Content: "sha256:<hash>:<caminho absoluto>"
 ```
 
 Calcule o hash com `shasum -a 256 <arquivo> | cut -d' ' -f1`.
+
+O conector pode recusar a referência a um arquivo em `$TMPDIR` ("Nothing was uploaded"). Nesse caso:
+
+- HTML e texto (relatório, perguntas, `log.txt`): mande o conteúdo em `textContent`.
+- Binário (planilha, docx): copie o arquivo para `esteira-<ID da pasta do cliente>/` dentro do scratchpad da sessão (o caminho está no prompt de sistema, em "Scratchpad directory"), calcule o hash da cópia e suba com a referência dela. Apague a cópia logo depois do upload. Registre no log que usou o scratchpad.
 
 | O que | contentMimeType | Conversão |
 |---|---|---|

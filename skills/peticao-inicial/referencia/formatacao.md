@@ -34,7 +34,7 @@ O modelo tem um parágrafo de exemplo por papel. Cada bloco do HTML copia a form
 | `<p class="total">` | total | `TOTAL DAS HORAS EXTRAS ........ R$ 10.180,98;` em negrito |
 | `<p class="subtotal">` | subtotal | `SUBTOTAL em <data> R$ <valor> (<extenso>)` |
 | `<p class="nota">` | nota do Validador | `<b>[NOTA DO VALIDADOR]</b> ...`, sai com fundo amarelo |
-| `<p class="fecho">` | fecho | "Termos em que, Pede deferimento." e "São Paulo, data e assinatura certificadas." |
+| `<p class="fecho">` | fecho | três parágrafos, um por linha: "Termos em que,", "Pede deferimento." e "São Paulo, data e assinatura certificadas." |
 | `<p class="assinatura">` | assinatura | duas linhas, em `<b>`: nome com OAB, e CPF |
 
 Dentro de qualquer bloco valem `<b>`, `<i>`, `<u>` e `<br>`.
@@ -45,6 +45,6 @@ O endereço, o e-mail e os telefones do escritório já estão no rodapé. Não 
 
 - **Linhas de cálculo:** toda linha tem o pontilhado visível até o valor no fim da linha. Isso evita que o juiz se perca entre as linhas. O Google Docs não tem tabulação com pontilhado, então os pontos vão no texto: `scripts/pontilhado.py` dá a linha pronta (rótulo, pontos, tabulação, valor). O `gerar_docx.py` já usa esse script.
 - **Negrito:** a linha do TOTAL de cada bloco vai inteira em negrito. No fim de cada pedido, o pontilhado e o valor (ou `DECLARAR;`, `EXPEDIR;`, `DEFERIR.`) vão em negrito, para o juiz achar o valor rápido.
-- **Encerramento:** "Termos em que, Pede deferimento.", local e data, e a assinatura saem sempre na formatação do modelo (papéis `fecho` e `assinatura`).
+- **Encerramento:** sempre centralizado, nesta ordem: "Termos em que," e "Pede deferimento." em duas linhas seguidas, sem espaço entre elas; depois "São Paulo, data e assinatura certificadas." com espaço antes e depois; depois a assinatura em negrito. O Redator escreve três `<p class="fecho">`, um por linha, e o `<p class="assinatura">`. O `gerar_docx.py` tira o espaço de um `fecho` seguido de outro `fecho`, então só o último `fecho` (local e data) fica com o espaço do modelo.
 
 Na rodada de ajuste, o Doc já existe: o pontilhado entra como texto sugerido logo antes da tabulação da linha (`insertText` com os pontos de `pontilhado.py`, precedidos de um espaço), e o negrito como `updateTextStyle` em modo sugestão.

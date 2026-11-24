@@ -31,16 +31,22 @@ ORDEM_RPR = [qn("w:" + t) for t in (
     "effect bdr shd fitText vertAlign rtl cs em lang eastAsianLayout specVanish oMath").split()]
 
 
+FORA_DO_TEXTO = {"head", "title", "style", "script"}
+
+
 class LeitorHTML(HTMLParser):
     """Lê o HTML simples do Redator: blocos com papel e trechos com negrito, itálico e sublinhado."""
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.blocos, self.atual, self.estilo, self.na_citacao = [], None, [], False
+        self.fora = 0  # dentro de <head>, <title>, <style> ou <script>: texto não entra
 
     def handle_starttag(self, tag, attrs):
         classe = (dict(attrs).get("class") or "").split()
-        if tag == "blockquote":
+        if tag in FORA_DO_TEXTO:
+            self.fora += 1
+        elif tag == "blockquote":
             self.na_citacao = True
         elif tag in TAG_PAPEL:
             papel = classe[0] if classe else ("citacao" if self.na_citacao else TAG_PAPEL[tag])
@@ -52,7 +58,9 @@ class LeitorHTML(HTMLParser):
             self.atual[1].append(("\n", set()))
 
     def handle_endtag(self, tag):
-        if tag == "blockquote":
+        if tag in FORA_DO_TEXTO:
+            self.fora = max(0, self.fora - 1)
+        elif tag == "blockquote":
             self.na_citacao = False
         elif tag in TAG_PAPEL:
             self.atual = None
@@ -62,6 +70,8 @@ class LeitorHTML(HTMLParser):
                 self.estilo.reverse(); self.estilo.remove(marca); self.estilo.reverse()
 
     def handle_data(self, data):
+        if self.fora:
+            return
         if self.atual is None:
             if not data.strip():
                 return
@@ -127,6 +137,7 @@ def gerar(modelo, html, saida):
     leitor = LeitorHTML()
     leitor.feed(open(html, encoding="utf-8").read())
     faltando = set()
+    anterior = None  # (papel, parágrafo) do último bloco escrito
     for papel, trechos in leitor.blocos:
         trechos = [(t, m) for t, m in trechos if t]
         if not "".join(t for t, _ in trechos).strip():
@@ -161,7 +172,12 @@ def gerar(modelo, html, saida):
         else:
             for texto, marcas in trechos:
                 p.append(novo_run(texto, marcas, base_r, destacar))
+        if papel == "fecho" and anterior is not None and anterior[0] == "fecho":
+            # Encerramento: linhas do fecho juntas; só o último fecho leva o espaço do modelo.
+            ppr = anterior[1].get_or_add_pPr()
+            ppr.spacing_before = ppr.spacing_after = 0
         fim.addprevious(p)
+        anterior = (papel, p)
     doc.save(saida)
     if faltando:
         print("Papéis sem exemplo no modelo (usei 'corpo'):", ", ".join(sorted(faltando)), file=sys.stderr)

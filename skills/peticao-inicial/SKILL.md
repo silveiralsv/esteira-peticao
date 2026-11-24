@@ -26,7 +26,10 @@ Responda ao usuário em português.
 ## Passo 1. Preparar a rodada
 
 1. Extraia o ID da pasta do link (`/folders/<ID>`). Se o link não for de pasta, pare e peça o link da pasta do cliente. Se a pasta for a própria `O que eu recebo` ou `O resultado` (compare sem acento e sem maiúsculas), use a pasta-mãe dela como pasta do cliente e registre isso no log.
-2. Liste os filhos da pasta (`parentId = '<ID>'`). Ache as subpastas `O que eu recebo` e `O resultado` (compare sem acento e sem maiúsculas). Se faltar `O que eu recebo`, pare e avise. Se faltar `O resultado`, crie a pasta (`create_file` com `contentMimeType: application/vnd.google-apps.folder` e `parentId` = pasta do cliente).
+2. Liste os filhos da pasta (`parentId = '<ID>'`). Ache as subpastas `O que eu recebo` e `O resultado` (compare sem acento e sem maiúsculas).
+   - **Falta `O que eu recebo` e a raiz tem arquivos** (pasta montada sem subpastas, na primeira rodada): crie `O que eu recebo` (`create_file` com `contentMimeType: application/vnd.google-apps.folder` e `parentId` = pasta do cliente). Mova para ela cada arquivo da raiz, sem as pastas (`update_file` com `parentId` = ID de `O que eu recebo`). Se o Drive recusar a mudança (a conta não é dona do arquivo), copie o arquivo para `O que eu recebo` com `copy_file` e o mesmo título; o original fica na raiz. Guarde a lista (arquivo, movido ou copiado) e registre no log depois do item 6. Não confira aqui se os documentos estão completos: isso é do Verificador.
+   - **Falta `O que eu recebo` e a raiz não tem arquivos:** pare e avise.
+   - **Falta `O resultado`:** crie a pasta (`create_file` com `contentMimeType: application/vnd.google-apps.folder` e `parentId` = pasta do cliente).
 3. Leia `config.local.md` nesta pasta da skill. Ele tem o link da pasta do banco de teses, o link do modelo de cálculo e o link do modelo de petição em papel timbrado (os dois modelos são os mesmos para todos os clientes). Se o arquivo ou um dos links faltar, pare e diga ao usuário para copiar `config.example.md` para `config.local.md` e preencher.
 4. Crie o diretório de trabalho: `${TMPDIR:-/tmp}/esteira-peticao/<ID da pasta do cliente>/`. Se já existir de uma rodada interrompida, apague o conteúdo antes.
 5. Se `O resultado` já tem `log.txt`, baixe para o diretório de trabalho. Senão, crie um `log.txt` vazio.

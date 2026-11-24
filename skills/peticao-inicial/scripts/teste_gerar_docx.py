@@ -14,11 +14,13 @@ with tempfile.TemporaryDirectory() as d:
         m.add_paragraph("{{%s}}" % papel)
     m.save(modelo)
     open(html, "w", encoding="utf-8").write(
+        "<html><head><title>PETIÇÃO</title><style>p {}</style></head><body>"  # não entra no texto
         "<h2>4.1. DAS HORAS EXTRAS</h2>"
         "<p>Texto com <b>negrito</b> e&nbsp;&nbsp;espaço.</p>"
         '<p class="item">Horas extras ........ R$ 7.338,46;</p>'
         '<p class="nota"><b>[NOTA DO VALIDADOR]</b> confira</p>'
         '<p class="inexistente">vira corpo</p>'
+        "</body></html>"
     )
     gerar(modelo, html, saida)
     ps = Document(saida).paragraphs
@@ -38,6 +40,23 @@ with tempfile.TemporaryDirectory() as d:
     assert ps[3].runs[0]._r.rPr.find(qn("w:highlight")) is not None
     assert "{{" not in "".join(p.text for p in ps)
 print("ok")
+
+# Encerramento: só o último fecho leva o espaço do modelo; os de cima ficam juntos.
+from docx.shared import Pt
+with tempfile.TemporaryDirectory() as d:
+    modelo, html, saida = (os.path.join(d, n) for n in ("m.docx", "p.html", "s.docx"))
+    m = Document()
+    m.add_paragraph("{{corpo}}")
+    f = m.add_paragraph("{{fecho}}").paragraph_format
+    f.space_before, f.space_after = Pt(24), Pt(36)
+    m.save(modelo)
+    open(html, "w", encoding="utf-8").write(
+        '<p class="fecho">Termos em que,</p><p class="fecho">Pede deferimento.</p>'
+        '<p class="fecho">São Paulo, data e assinatura certificadas.</p>')
+    gerar(modelo, html, saida)
+    esp = [(p.paragraph_format.space_before, p.paragraph_format.space_after) for p in Document(saida).paragraphs]
+    assert esp == [(0, 0), (0, 0), (Pt(24), Pt(36))], esp
+print("ok fecho")
 
 # A linha com os pontos cabe antes da tabulação, com e sem negrito.
 from pontilhado import RECUO_PT, TAB_PT, largura, linha
