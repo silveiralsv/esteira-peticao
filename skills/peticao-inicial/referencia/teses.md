@@ -37,7 +37,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Tese | Gatilho na entrevista | Fatos mínimos | Cálculo | Reflexos |
 |---|---|---|---|---|
 | Tutela de urgência | a entrevista pede expressamente a tutela, a estabilidade ou a readmissão, com dispensa recente | estabilidade + dispensa | sem valor | — |
-| Estabilidade acidentária / readmissão | a entrevista pede expressamente a estabilidade ou a readmissão. Afastamento, acidente ou doença sem esse pedido não criam a tese nem pergunta | datas do afastamento e da alta, dispensa dentro de 12 meses | A: 12 salários (exemplo único sem reflexos; nota ao advogado) | ver nota |
+| Estabilidade acidentária / readmissão | a entrevista pede expressamente a estabilidade ou a readmissão. Afastamento, acidente ou doença sem esse pedido não criam esta tese nem pergunta (a doença ocupacional é outra tese, abaixo, e não precisa desse pedido) | datas do afastamento e da alta, dispensa dentro de 12 meses | A: 12 salários (exemplo único sem reflexos; nota ao advogado) | ver nota |
 | Estabilidade CIPA | membro eleito da CIPA | data da eleição, mandato, data da dispensa | A: salários até o fim da estabilidade (exemplo: 6 salários) | sim |
 | Reconhecimento de vínculo | trabalho sem registro | início, fim, função, salário, subordinação | A: rescisórias como dispensa sem justa causa | sim |
 | Nulidade da justa causa | motivo da dispensa = justa causa | motivo alegado e versão do cliente | P/A: rescisórias como dispensa sem justa causa | sim |
@@ -68,8 +68,9 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Vale-transporte | VT não pago | valor diário e período | P: valor × dias | não |
 | Auxílio-creche | filho na idade da CCT, pedido feito | data de nascimento do filho, valor da CCT | A: valor × meses | não |
 | Participação nos lucros e resultados | PLR prevista e não paga | política ou CCT | F: R$ 500,00 e pedido de exibição dos acordos | não |
-| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 10.000,00 (Q8) | não |
-| Danos materiais | doença ou acidente com gasto ou perda | gastos ou incapacidade | F: R$ 10.000,00 | não |
+| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 30.000,00 (Q8), com o texto fixo do pedido abaixo | não |
+| Doença ocupacional (danos morais e materiais, perícia médica) | seção "DOENÇA OCUPACIONAL / ACIDENTE DE TRABALHO" com fato concreto (ex.: surto, afastamento pelo INSS, tratamento, lesão por sobrecarga). Não precisa de pedido expresso de estabilidade ou readmissão: a regra da estabilidade acidentária não vale aqui | o fato da doença ou do acidente e a ligação com o trabalho (sobrecarga, função, setor) | sem valor próprio: perícia médica (NOMEAR), prontuários, danos morais e danos materiais (linhas abaixo) | não |
+| Danos materiais | tese de doença ocupacional na petição (entra sempre com ela, mesmo sem gasto ou perda na entrevista: é a margem a favor do cliente) ou doença/acidente com gasto ou perda | o fato da doença ou do acidente | F: R$ 10.000,00 | não |
 
 ## Seções que dependem de outra tese
 
@@ -77,12 +78,13 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 - **Guias SD e FGTS** (pedido "EMITIR"): rescisão indireta, nulidade da justa causa e vínculo.
 - **Ofícios à Receita Federal, INSS, DRT e Polícia Federal:** só com FGTS não depositado comprovado.
 - **Perícia médica e prontuários:** danos ligados a doença ocupacional.
+- **Síntese com doença ocupacional:** o item é "Indenização por Danos Morais e Materiais" e a seção dos fundamentos é "DA INDENIZAÇÃO POR DANO MORAL E MATERIAL", com os fatos do assédio (seção "DANO MORAL") e da doença juntos.
 
 ## Restos de modelo que o Redator não pode copiar
 
 - "afastado o período de licença doença" quando não houve afastamento.
 - Prédio vertical e tanques de diesel quando a entrevista não fala de inflamáveis.
-- "dispensada doente", "aposentadoria por invalidez" ou "discriminada" sem fato.
+- "dispensada doente", "aposentadoria por invalidez" ou "discriminada" sem fato. Com fato de doença ocupacional na entrevista, esses trechos (e "teve diversos gastos", "não consegue retornar ao labor", o pedido de indenização se houver incapacidade) são do modelo do escritório e ficam, como no texto fixo abaixo.
 - Gênero do exemplo ("da autora", "a obreira") quando o cliente é de outro gênero.
 - Nome de cidade, município, hospital, gestor ou paradigma do exemplo.
 - "Não efetuou o pagamento de qualquer adicional" quando a pessoa recebia insalubridade.
@@ -105,6 +107,37 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 >
 > Diante disso, a reclamante faz jus e requer a Vossa Excelência a condenação da reclamada no pagamento da integralidade das dobras dos dias de folga, devendo ser remunerado em dobro (artigo 9º da Lei 605/49), sem prejuízo da remuneração relativa ao dia inserida no salário mensal (Súmula nº 146 do C. TST); apurado pelos controles de jornada, com a integração e reflexos.
 
-**Multa do art. 477.** Copie o bloco inteiro do exemplo do banco, mesmo sem pedido de vínculo: o título "DA APLICAÇÃO DA MULTA DO §8º DO ART. 477 DA CLT – SÚMULA 462 DO C.TST", o parágrafo do § 6º, o parágrafo e a citação da Súmula 462, os dois parágrafos seguintes ("A tentativa de derrogação..." e "Negar aplicação... PREMIAR O ARDIL...") e o "Do exposto, requer...". Ajuste só o gênero.
+**Multa do art. 477.** Copie o bloco inteiro do exemplo do banco, mesmo sem pedido de vínculo: o título "DA APLICAÇÃO DA MULTA DO §8º DO ART. 477 DA CLT" (sem "– SÚMULA 462 DO C.TST" no título; a advogada recusou esse acréscimo), o parágrafo do § 6º, o parágrafo e a citação da Súmula 462, os dois parágrafos seguintes ("A tentativa de derrogação..." e "Negar aplicação... PREMIAR O ARDIL...") e o "Do exposto, requer...". Ajuste só o gênero.
 
 **Responsabilidade subsidiária.** Use o texto do exemplo do banco como está. Não cite o Tema 1118 do STF, o contrato entre as reclamadas nem outra jurisprudência.
+
+**Doença ocupacional e danos (fundamento).** Seção "DA INDENIZAÇÃO POR DANO MORAL E MATERIAL". Comece com o parágrafo abaixo, depois os fatos da entrevista (assédio, doença, afastamento, tratamento, restrição médica), sem nome de terceiros, e então os parágrafos fixos do modelo. Ajuste só o gênero.
+
+> Requer desde já que seja nomeado perito médico legal para comprovar o nexo causal da doença da reclamante com o labor na reclamada. (RECONHECIMENTO DE DOENÇA OCUPACIONAL)
+>
+> [fatos da entrevista, um parágrafo por fato]
+>
+> Esta prática gera dano moral, que deve ser indenizado, e cujo montante deve buscar a educação da reclamada bem como coibir a repetição de práticas discriminatórias e violadoras da dignidade da pessoa humana.
+>
+> [parágrafos do modelo: art. 186 do CC; arbitramento pelo juízo; art. 5º, V e X, da CF; Súmulas 37 e 387 do STJ; cumulação no C. TST, com a ementa; "Por fim, reconhecida a possibilidade de cumulação..."]
+>
+> Diante disso, ensejando comprovar que a reclamante foi dispensada doente e em tratamento, sendo portadora de doença ocupacional, de forma discriminatória em afronta aos princípios basilares do Direito, bem como teve diversos gastos em decorrência dos tratamentos médicos e, não consegue retornar ao labor e desenvolver sua função, requer a Vossa Excelência:
+>
+> a) A realização de perícia médica a fim de aferir as condições físicas da autora atualmente, com o escopo de estabelecer o nexo causal entre a doença e o trabalho desenvolvido pela reclamante;
+>
+> b) Que seja a reclamada condenada a juntar aos autos os prontuários médicos da obreira em poder da reclamada.
+>
+> c) Restando evidenciada a dor e o sofrimento da reclamante, conforme disposto nos artigos 223-B; 223-C; 223-E e; 223-G da CLT e art. 5o, incisos V e X da CF/88, arts. 186 e 927 do CC/02, pleiteia a condenação da reclamada no pagamento de indenização por danos morais;
+>
+> d) Restando evidenciados os prejuízos físicos, decorrentes da doença desenvolvida e impossibilidade de retomar suas atividades, requer a reclamante a condenação da reclamada no pagamento de indenização por danos materiais;
+>
+> e) Caso seja reconhecida a incapacidade laboral da reclamante, requer a Vossa Excelência que seja a reclamada condenada ao pagamento da indenização de aposentadoria por invalidez parcial.
+
+**Danos morais e materiais (pedido).** Regra da advogada: o pedido de danos morais é sempre desta forma, com estas palavras e com este valor. Um pedido com uma lista: a abertura, depois um item por linha. O pontilhado e o valor (ou `NOMEAR;`) vão em negrito. Sem doença ocupacional, tire os itens da perícia, dos prontuários e dos danos materiais e, na abertura, "bem como teve diversos gastos em decorrência dos tratamentos médicos". Ajuste só o gênero.
+
+> **<letra>-** Ensejando comprovar que a reclamante foi discriminada no labor na reclamada em afronta aos princípios basilares do direito, bem como teve diversos gastos em decorrência dos tratamentos médicos, requer:
+>
+> - A realização de perícia médica a fim de aferir as condições físicas da autora, com o escopo de comprovar que a obreira desenvolveu doença devido o labor na reclamada ........ **NOMEAR;**
+> - Que seja a reclamada condenada a juntar nos autos os prontuários médicos da reclamante em poder da reclamada;
+> - Restando evidenciada a dor e o sofrimento da reclamante, conforme disposto nos artigos 223-B; 223-C; 223-E e; 223-G da CLT e art. 5º, incisos V e X da CF/88, arts. 186 e 927 do CC/02, pleiteia a condenação da reclamada no pagamento de indenização por danos morais no montante de ........ **R$ 30.000,00;**
+> - Restando evidenciados os prejuízos físicos e emocionais, decorrentes da doença desenvolvida e impossibilidade de retomar suas atividades, requer a reclamante a condenação da reclamada no pagamento de indenização por danos materiais, totalizando o valor ........ **R$ 10.000,00;**

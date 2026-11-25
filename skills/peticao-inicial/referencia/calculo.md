@@ -15,12 +15,12 @@ Estas regras saem da petição de referência e das petições do banco de teses
 | Diferença salarial sem valor na entrevista (desvio de função e parecidas) | CCT da categoria ou lei | Piso da função exercida − salário, sem pergunta. Sem CCT com o piso, use o piso legal da profissão. |
 | Frequência "com frequência" sem número | Regra do escritório | Pelo menos 3 ocorrências, nunca uma só. Exceção expressa à regra 4 de "Horas extras: quanto contar" e a "nunca invente frequência" (`teses.md`). Número dado pela entrevista ou pelo advogado vence o padrão. |
 | Salário mínimo | Planilha | Use o valor da planilha. Se ele não for o do ano corrente, use o valor oficial e cite a fonte. |
-| Data de referência | Dia da rodada | É a data do "SUBTOTAL em ..." e a base da prescrição. |
+| Data de referência | Dia da rodada | É a data do "SUBTOTAL em ..." e a base da prescrição bienal. |
 
 ## Período de cálculo
 
 - **Prescrição bienal:** se a saída foi há mais de 2 anos, não há ação. O veredito é Bloqueado.
-- **Prescrição quinquenal:** o período começa no maior entre a admissão e (data de referência − 5 anos).
+- **Últimos 60 meses (regra do escritório):** a conta usa no máximo 60 meses, os últimos do contrato, terminando no fim do período (abaixo). Contrato com mais de 5 anos: os 60 meses que terminam na saída. Contrato menor: o contrato inteiro. Nunca mais de 60 meses, mesmo com muito mais tempo de registro. O marco não se conta da data de referência (data da rodada − 5 anos).
 - **Fim do período:** a saída. Se a pessoa ainda trabalha, a data de referência.
 - **Meses:** conte os meses do período. Fração de 15 dias ou mais vale 1 mês.
 - **Meses trabalhados:** nas verbas que dependem de trabalho efetivo (horas extras, noturno, feriados, plantões), conte os meses de férias como meses trabalhados (o escritório confirmou esse cálculo). Tire só os meses de afastamento.
@@ -82,11 +82,11 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 | Pedido | Valor |
 |---|---|
 | Multa diária do PPP | R$ 500,00 |
-| Danos morais (Q8) | R$ 10.000,00 |
+| Danos morais (Q8) | R$ 30.000,00 |
 | Danos materiais | R$ 10.000,00 |
 | PLR sem dados | R$ 500,00 |
 
-**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. O padrão é o inciso III. Se o texto citar o inciso I, o valor não pode passar de 3 salários.
+**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. O padrão é o inciso III: 20 × R$ 1.500,00 = R$ 30.000,00, então o teto do inciso III comporta os R$ 30.000,00 sempre que o salário contratual é de R$ 1.500,00 ou mais (todo salário a partir do mínimo). Salário menor (ex.: jornada parcial): o valor dos danos morais é o teto, 20 salários. Se o texto citar o inciso I (3 salários) ou o II (5 salários), o valor não pode passar desse teto.
 
 ## Honorários e valor da causa
 
@@ -100,5 +100,7 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 - Limpe as células de entrada que sobraram de outro caso (nome de paradigma, datas, avos e dias do cabeçalho). Se uma fórmula der `#REF!`, não use o bloco: calcule numa aba extra e registre no log.
 - Teses sem bloco no modelo vão numa aba extra `Cálculos extras`, uma linha por item, com a fórmula visível.
 - Para ler os totais calculados, suba a planilha (ela vira Google Sheet e calcula as fórmulas) e baixe o Sheet exportado como xlsx, como diz `drive.md`.
+- **Meses de cada bloco (L6 = base de cálculo):** na aba `CALCULO TRABALHISTAS`, `L5` (MESES TRABALHADOS) é o fato do contrato (fórmula com entrada e saída) e `L6` (BASE DE CÁLCULO) é `=MIN(60;L5)`. Cada campo de meses dos blocos é fórmula que lê `L6`, nunca número solto: horas extras `K22`, intervalo `Z20`, adicional noturno `T49`, insalubridade `D36`, periculosidade `S36`, acúmulo `V60`, DSR `D61`, equiparação `H71`, e os meses dos blocos da aba `Cálculos extras` (ex.: desvio de função `='CALCULO TRABALHISTAS'!L6`). Nas verbas de trabalho efetivo com meses de afastamento, use `=L6-<meses de afastamento>` (ex.: `=L6-1`). Os anos de feriados são `AA5 = L6/12`, e `F48` (anos que o bloco de feriados usa) é `=AA5`. Assim o topo mostra o número que a conta usa, e mudar `L6` recalcula tudo. A planilha usa `;` como separador de argumentos.
+- **Salário médio no período:** o salário médio ponderado (`Cálculos extras`) cobre só os meses do período de cálculo (os últimos 60, ou o contrato inteiro), com cada faixa salarial da CTPS que cai nele.
 - **Salário com várias faixas:** o modelo tem uma célula de salário só. Nos blocos que usam todo o período, preencha o salário médio ponderado pelos meses, calculado na aba `Cálculos extras`. Um bloco com outro período (ex.: só os meses noturnos) é calculado faixa a faixa na aba extra.
 - Rode o Python com `uv run --with openpyxl python3 ...`. Não instale pacotes no sistema.
