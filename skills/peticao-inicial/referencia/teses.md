@@ -68,7 +68,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Vale-transporte | VT não pago | valor diário e período | P: valor × dias | não |
 | Auxílio-creche | filho na idade da CCT, pedido feito | data de nascimento do filho, valor da CCT | A: valor × meses | não |
 | Participação nos lucros e resultados | PLR prevista e não paga | política ou CCT | F: R$ 500,00 e pedido de exibição dos acordos | não |
-| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 30.000,00 (Q8), com o texto fixo do pedido abaixo | não |
+| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 10.000,00 (Q8), com o texto fixo do pedido abaixo | não |
 | Doença ocupacional (danos morais e materiais, perícia médica) | seção "DOENÇA OCUPACIONAL / ACIDENTE DE TRABALHO" com fato concreto (ex.: surto, afastamento pelo INSS, tratamento, lesão por sobrecarga). Não precisa de pedido expresso de estabilidade ou readmissão: a regra da estabilidade acidentária não vale aqui | o fato da doença ou do acidente e a ligação com o trabalho (sobrecarga, função, setor) | sem valor próprio: perícia médica (NOMEAR), prontuários, danos morais e danos materiais (linhas abaixo) | não |
 | Danos materiais | tese de doença ocupacional na petição (entra sempre com ela, mesmo sem gasto ou perda na entrevista: é a margem a favor do cliente) ou doença/acidente com gasto ou perda | o fato da doença ou do acidente | F: R$ 10.000,00 | não |
 
@@ -133,11 +133,11 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 >
 > e) Caso seja reconhecida a incapacidade laboral da reclamante, requer a Vossa Excelência que seja a reclamada condenada ao pagamento da indenização de aposentadoria por invalidez parcial.
 
-**Danos morais e materiais (pedido).** Regra da advogada: o pedido de danos morais é sempre desta forma, com estas palavras e com este valor. Um pedido com uma lista: a abertura, depois um item por linha. O pontilhado e o valor (ou `NOMEAR;`) vão em negrito. Sem doença ocupacional, tire os itens da perícia, dos prontuários e dos danos materiais e, na abertura, "bem como teve diversos gastos em decorrência dos tratamentos médicos". Ajuste só o gênero.
+**Danos morais e materiais (pedido).** Regra da advogada: o pedido de danos morais é sempre desta forma, com estas palavras e com este valor. Danos morais e danos materiais valem R$ 10.000,00 cada, sempre (a advogada corrigiu um valor de R$ 30.000,00 que ela mesma tinha escrito). Um pedido com uma lista: a abertura, depois um item por linha. O pontilhado e o valor (ou `NOMEAR;`) vão em negrito. Sem doença ocupacional, tire os itens da perícia, dos prontuários e dos danos materiais e, na abertura, "bem como teve diversos gastos em decorrência dos tratamentos médicos". Ajuste só o gênero.
 
 > **<letra>-** Ensejando comprovar que a reclamante foi discriminada no labor na reclamada em afronta aos princípios basilares do direito, bem como teve diversos gastos em decorrência dos tratamentos médicos, requer:
 >
 > - A realização de perícia médica a fim de aferir as condições físicas da autora, com o escopo de comprovar que a obreira desenvolveu doença devido o labor na reclamada ........ **NOMEAR;**
 > - Que seja a reclamada condenada a juntar nos autos os prontuários médicos da reclamante em poder da reclamada;
-> - Restando evidenciada a dor e o sofrimento da reclamante, conforme disposto nos artigos 223-B; 223-C; 223-E e; 223-G da CLT e art. 5º, incisos V e X da CF/88, arts. 186 e 927 do CC/02, pleiteia a condenação da reclamada no pagamento de indenização por danos morais no montante de ........ **R$ 30.000,00;**
+> - Restando evidenciada a dor e o sofrimento da reclamante, conforme disposto nos artigos 223-B; 223-C; 223-E e; 223-G da CLT e art. 5º, incisos V e X da CF/88, arts. 186 e 927 do CC/02, pleiteia a condenação da reclamada no pagamento de indenização por danos morais no montante de ........ **R$ 10.000,00;**
 > - Restando evidenciados os prejuízos físicos e emocionais, decorrentes da doença desenvolvida e impossibilidade de retomar suas atividades, requer a reclamante a condenação da reclamada no pagamento de indenização por danos materiais, totalizando o valor ........ **R$ 10.000,00;**

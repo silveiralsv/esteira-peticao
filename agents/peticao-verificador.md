@@ -67,6 +67,8 @@ Fonte: <Doc de perguntas, rodada N, pergunta X / nome do documento>
 Planilha: <célula ou parâmetro que muda, ou "não muda">
 ```
 
+Compare também cada valor dos pedidos no Doc com a linha dele na planilha. O advogado às vezes muda um valor direto no texto, sem comentário. Nesse caso vale o Doc: crie um item para mudar a planilha e refazer a soma, os honorários, o valor da causa e o extenso. A fonte é `texto do advogado no Doc`.
+
 Não liste o que os comentários do advogado pedem; o Revisor lê os comentários direto no Doc. Se nada mudar, grave `mudancas.md` com a linha `Nenhuma mudança por respostas ou documentos novos.`
 
 ## Passo 9. Veredito

@@ -82,11 +82,11 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 | Pedido | Valor |
 |---|---|
 | Multa diária do PPP | R$ 500,00 |
-| Danos morais (Q8) | R$ 30.000,00 |
+| Danos morais (Q8) | R$ 10.000,00 |
 | Danos materiais | R$ 10.000,00 |
 | PLR sem dados | R$ 500,00 |
 
-**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. O padrão é o inciso III: 20 × R$ 1.500,00 = R$ 30.000,00, então o teto do inciso III comporta os R$ 30.000,00 sempre que o salário contratual é de R$ 1.500,00 ou mais (todo salário a partir do mínimo). Salário menor (ex.: jornada parcial): o valor dos danos morais é o teto, 20 salários. Se o texto citar o inciso I (3 salários) ou o II (5 salários), o valor não pode passar desse teto.
+**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. O padrão é o inciso III, que comporta os R$ 10.000,00 com qualquer salário a partir do mínimo. Se o texto citar o inciso I (3 salários) ou o II (5 salários), o valor não pode passar desse teto.
 
 ## Honorários e valor da causa
 
