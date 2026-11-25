@@ -67,6 +67,7 @@ Os conectores Google Docs (`mcp__claude_ai_Google_Docs__*`) e Google Sheets (`mc
 - Mude só as palavras que mudam. Apagar o trecho inteiro em que um comentário está ancorado tira o comentário do texto.
 - Se o Doc mudou depois da leitura, o conector recusa o lote inteiro. Leia de novo e refaça o lote. Nunca tire o `requiredRevisionId`.
 - Texto sugerido e texto com exclusão sugerida ocupam índices até alguém aceitar ou rejeitar. Não escreva dentro deles.
+- **Sugestão rejeitada é decisão do advogado.** O log guarda cada sugestão das rodadas anteriores, com o antes e o depois. Se o Doc ainda tem o texto de antes, o advogado rejeitou: não sugira de novo, mesmo que uma regra de `referencia/` mande a troca. Registre no log `rejeitada pelo advogado na rodada N` e cite no relatório.
 
 **Comentar.** `update_doc` com:
 
