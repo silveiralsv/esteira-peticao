@@ -91,7 +91,7 @@ O comentário fica ancorado no trecho e aparece com o nome da conta do usuário.
 
 Petições e planilhas antigas podem ter ` - rodada 1` no fim do título. O orquestrador tira o sufixo na rodada seguinte.
 
-`<NOME DO CLIENTE>` é o nome da procuração, em maiúsculas.
+`<NOME DO CLIENTE>` é o nome da procuração, em maiúsculas (sem procuração, o da entrevista).
 
 ## log.txt
 

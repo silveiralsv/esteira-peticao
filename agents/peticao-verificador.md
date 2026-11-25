@@ -17,7 +17,7 @@ Registre no `log.txt` do diretório de trabalho cada passo, como diz `drive.md`.
 
 ## Passo 1. Inventário
 
-Liste `O que eu recebo`. Os 3 documentos obrigatórios são: procuração, entrevista e CTPS. O modelo de cálculo não fica na pasta do cliente; ele é um só, com o link em `config.local.md`. Os outros (holerites, TRCT, extrato do FGTS, CNIS, atestados) são opcionais e não bloqueiam (Q9). Faltou um obrigatório: Bloqueado.
+Liste `O que eu recebo`. O único documento obrigatório é a entrevista. Procuração e CTPS completam a qualificação e o contrato, mas não bloqueiam: sem elas, a petição sai com o que a entrevista traz, e cada dado que só elas dariam vira pendência (Passo 8A). O modelo de cálculo não fica na pasta do cliente; ele é um só, com o link em `config.local.md`. Os outros (holerites, TRCT, extrato do FGTS, CNIS, atestados) são opcionais e não bloqueiam (Q9). Sem entrevista: Bloqueado.
 
 ## Passo 2. Procuração
 
@@ -29,9 +29,13 @@ Leia a procuração. Confira:
 
 O preâmbulo da petição copia essa qualificação sem mudar nada. Guarde o texto exato no dossiê.
 
+**Sem procuração:** a qualificação sai da entrevista. Cada campo que a entrevista não traz é pendência, e a própria procuração também (o escritório precisa dela para protocolar).
+
 ## Passo 3. CTPS
 
 A carteira pode ter vários contratos. Ache o contrato com o empregador da entrevista. Ignore os outros. Tire dele: admissão, saída, cargo, salário inicial e reajustes, CNPJ e endereço do estabelecimento e férias anotadas.
+
+**Sem CTPS:** admissão, saída, cargo e salário saem da entrevista. CNPJ e endereço do estabelecimento: busque na internet e cite a fonte (Q6). O que não achar, os reajustes e as férias anotadas são pendência. A conta usa o salário da entrevista.
 
 ## Passo 4. Entrevista
 
@@ -49,7 +53,7 @@ A carteira pode ter vários contratos. Ache o contrato com o empregador da entre
 
 ## Passo 6. Cruzamento
 
-Compare entrevista, CTPS e procuração campo a campo. Em cada divergência, aplique Q4 (vale a CTPS) e escreva no log: `<campo>: entrevista <x>, CTPS <y> → vale CTPS (Q4)`. Confira a prescrição como diz `calculo.md`.
+Compare entrevista, CTPS e procuração (as que existem) campo a campo. Em cada divergência, aplique Q4 (vale a CTPS) e escreva no log: `<campo>: entrevista <x>, CTPS <y> → vale CTPS (Q4)`. Confira a prescrição como diz `calculo.md`.
 
 ## Passo 7. Parâmetros
 
@@ -71,11 +75,15 @@ Compare também cada valor dos pedidos no Doc com a linha dele na planilha. O ad
 
 Não liste o que os comentários do advogado pedem; o Revisor lê os comentários direto no Doc. Se nada mudar, grave `mudancas.md` com a linha `Nenhuma mudança por respostas ou documentos novos.`
 
+## Passo 8A. Pendências
+
+Pendência é um dado que a petição precisa e que nenhum documento da pasta traz, porque falta o documento (procuração, CTPS, holerite, TRCT). Não é pergunta e não bloqueia. Para cada uma, grave no dossiê: campo, onde entra na petição, motivo e o documento que resolve. Ex.: `RG e CPF · preâmbulo · sem procuração, e a entrevista não traz · procuração ou documento de identidade`. Dúvida de tese ou de critério continua pergunta (Passo 10).
+
 ## Passo 9. Veredito
 
 - **Apto:** documentos completos, todas as teses com fato, sem pergunta pendente.
-- **Apto com ressalvas:** a petição pode sair, mas há teses fora por falta de fato, ou parâmetros estimados.
-- **Bloqueado:** falta documento obrigatório, a procuração não serve, há prescrição bienal ou a tese principal está sem fato.
+- **Apto com ressalvas:** a petição pode sair, mas há teses fora por falta de fato, parâmetros estimados ou pendências.
+- **Bloqueado:** falta a entrevista, a procuração que existe não serve, há prescrição bienal ou a tese principal está sem fato.
 
 ## Passo 10. Doc de perguntas
 
@@ -95,12 +103,13 @@ Inclua as perguntas pendentes de rodadas anteriores.
 Grave `dossie.md` no diretório de trabalho com:
 
 1. Veredito e motivo.
-2. Qualificação exata da procuração.
+2. Qualificação exata da procuração (sem procuração, a da entrevista, com as pendências marcadas).
 3. Partes: reclamadas, CNPJ, endereços, tomador, local da prestação, vara, com a fonte de cada dado.
 4. Contrato: admissão, saída, forma de saída, cargo, salário, jornada, período de cálculo.
 5. Teses escolhidas, na ordem do catálogo. Para cada uma: fatos com a fonte, parâmetros, exemplo do banco de teses a usar (título do arquivo).
 6. Teses fora e o motivo.
 7. Divergências e a regra aplicada.
 8. Perguntas criadas e o link do Doc.
+9. Pendências (Passo 8A).
 
 Acrescente ao log o veredito e `Verificador | fim`. A última linha da sua resposta ao orquestrador é exatamente `VEREDITO: Apto`, `VEREDITO: Apto com ressalvas` ou `VEREDITO: Bloqueado`.

@@ -58,5 +58,6 @@ Use a linha pontilhada dos exemplos nos itens de valor: `Horas extras ........ R
 - Gênero, número (reclamada ou reclamadas) e nomes ajustados ao caso em todo o texto.
 - Não copie nada da lista "Restos de modelo" de `teses.md`.
 - Valores no formato brasileiro: `R$ 1.234,56`.
+- **Pendência** (dado que o dossiê marca como pendência): no lugar do dado, escreva `[PENDENTE: <campo>]`. Logo depois do parágrafo, ponha uma nota visível: `<p class="nota"><b>[PENDENTE]</b> <campo>: não deu para preencher. Motivo: <motivo>. Resolve com: <documento>.</p>`. Valor que depende de um dado pendente usa o dado da entrevista, e a nota diz isso. Nunca invente o dado.
 
 Acrescente ao log `Redator | fim · peticao.html pronta · <n> pedidos · valor da causa R$ <valor>`. Responda ao orquestrador com o título da planilha criada e o valor da causa.

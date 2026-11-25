@@ -18,8 +18,8 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
 
 ## O que conferir
 
-1. **Identidade.** Preâmbulo contra a procuração, campo a campo.
-2. **Vínculo.** Datas, salário, cargo e CNPJ contra a CTPS.
+1. **Identidade.** Preâmbulo contra a procuração, campo a campo (sem procuração, contra a entrevista).
+2. **Vínculo.** Datas, salário, cargo e CNPJ contra a CTPS (sem CTPS, contra a entrevista e a fonte citada no dossiê).
 3. **Fatos.** Cada afirmação de fato na petição precisa de fonte no dossiê ou num documento. Procure em especial: causa das horas extras, agentes de insalubridade e periculosidade, afastamentos, pagamento de adicionais, FGTS não depositado.
 4. **Contas.** Faça todas as contas com um script Python, nunca de cabeça. Grave o script como `contas.py` no diretório de trabalho e use a saída dele no relatório.
    - Cada parâmetro da planilha contra o dossiê.
@@ -42,6 +42,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
 
 - **Ponto de julgamento** (tese fraca, critério de tese com um exemplo só, estimativa): não reescreva. Deixe uma nota no mesmo formato. Para tese com um exemplo só, a nota diz "tese nova, confira o critério".
 - **Sem nota contra as regras do escritório.** Não escreva nota contra o que "Como o escritório decide" (`teses.md`) e `calculo.md` mandam fazer: tese que a entrevista pede, maior valor da faixa, insalubridade e periculosidade juntas, responsabilidade subsidiária sem prova, levantamento do FGTS, horas de relógio na prorrogação noturna, valor padrão do modelo de cálculo (ex.: 10 feriados por ano). Nota é para erro, fato sem fonte e dúvida que nenhuma regra resolve.
+- **Pendência:** a marca `[PENDENTE: ...]` e a nota `[PENDENTE]` são da esteira, não fato sem fonte. Não tire. Confira que cada pendência do dossiê tem a marca e a nota, e que nenhum dado foi inventado no lugar.
 - Registre cada correção no log: `Validador | correção · <onde> · antes: <x> · depois: <y>`.
 
 ## Saída
@@ -51,7 +52,8 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
    - o que foi conferido e está correto;
    - cada correção feita, com o antes e o depois;
    - cada nota deixada para o advogado;
-   - os totais finais: soma dos pedidos, honorários, valor da causa.
+   - os totais finais: soma dos pedidos, honorários, valor da causa;
+   - se houver pendência, a seção "Mensagem para o escritório": um texto pronto para a advogada mandar ao escritório, em português simples. Diz o nome do cliente, que a petição está pronta com o que a entrevista permite, e lista cada pendência: o que falta, onde entra na petição e o documento que resolve.
 3. Acrescente ao log os títulos e os IDs dos arquivos criados e `Validador | fim · <n> correções · <n> notas`.
 
 Responda ao orquestrador com os links da petição e do relatório, o número de correções e de notas.
@@ -63,5 +65,5 @@ Quando o orquestrador passa o ID de uma petição que já existe, não há `peti
 - **O que conferir:** o texto proposto, isto é, o Doc com todas as sugestões aceitas. Leia com `read_doc`, salve o resultado no diretório de trabalho e rode `python3 <scripts>/texto_sugerido.py <arquivo>`. Faça as mesmas conferências de "O que conferir" nesse texto, com `contas.py`, contra a planilha `CÁLCULO <NOME>` (leia com `get_values`) e contra os documentos.
 - **Erro objetivo:** corrija no Doc em modo sugestão, como diz `drive.md`, "Editar no lugar". Não mexa dentro de uma sugestão do Revisor que ainda está pendente: sugira a troca do trecho inteiro. Erro na planilha: corrija a célula no lugar e registre o antes e o depois.
 - **Fato sem fonte e ponto de julgamento:** não escreva nota no texto. Crie um comentário `[ESTEIRA] Nota do Validador: ...` ancorado no trecho (`insertComment`).
-- **Saída:** só o relatório (`RELATÓRIO DE VALIDAÇÃO <NOME DO CLIENTE> - rodada N`), com o que o Revisor mudou e está correto, cada correção sua e cada nota.
+- **Saída:** só o relatório (`RELATÓRIO DE VALIDAÇÃO <NOME DO CLIENTE> - rodada N`), com o que o Revisor mudou e está correto, cada correção sua, cada nota e a "Mensagem para o escritório" com as pendências que ainda faltam.
 - Antes de responder, leia o Doc de novo com `read_file_content` e `includeComments: true` e confira que cada comentário do advogado ainda está lá.
