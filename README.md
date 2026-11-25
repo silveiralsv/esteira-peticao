@@ -111,7 +111,7 @@ skills/peticao-inicial/config.example.md
 | Q5 | O Validador corrige erros objetivos. Fato sem fonte sai e vira nota para o advogado. |
 | Q6 | Os agentes podem buscar dados fora da pasta (CNPJ, vara, CCT, salário mínimo), sempre citando a fonte. |
 | Q7 | O escritório autorizou o envio dos dados dos clientes ao modelo. |
-| Q8 | Danos morais: R$ 10.000,00 pelo inciso III do art. 223-G, salvo outro critério do advogado. |
+| Q8 | Danos morais: R$ 10.000,00. O pedido só de danos morais usa o texto fixo da advogada, com o inciso I do art. 223-G; com doença ocupacional, o pedido de danos morais e materiais (R$ 10.000,00 cada). |
 | Q12 | A esteira é uma skill: `/peticao-inicial <link>`. |
 | Q15 | O Doc de perguntas tem o campo `Responde: eu / escritório`. |
 

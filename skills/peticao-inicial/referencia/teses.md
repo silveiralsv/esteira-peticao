@@ -49,7 +49,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Responsabilidade subsidiária | seção "RESPONSABILIDADE SUBSIDIÁRIA" com um tomador indicado (com ou sem a palavra "Sim"), mesmo numa frase só | tomador. Não exige prova da falta de fiscalização nem o contrato ou convênio entre as reclamadas | sem valor (DECLARAR) | — |
 | Horas extras / invalidade do banco de horas / 12x36 | "HORAS EXTRAS" | minutos por dia ou plantão e frequência (quanto contar: `calculo.md`) | P | todos, com DSR |
 | Intervalo intrajornada | seção "INTERVALO" com o pedido | minutos usufruídos | P: minutos suprimidos, natureza indenizatória | não |
-| Feriados laborados | seção "FERIADOS" com fato ou "Pedir" | nenhum além da jornada. Use o texto fixo abaixo | P: dobra (100%). Sem número na entrevista, use o padrão do modelo de cálculo (10 feriados por ano), sem nota | todos, com DSR |
+| Feriados laborados | seção "FERIADOS" com fato ou "Pedir" | nenhum além da jornada. Use os textos fixos abaixo (fundamento e pedido) | P: dobra (100%). Sem número na entrevista, use o padrão do modelo de cálculo (10 feriados por ano), sem nota | todos, com DSR |
 | Labor em dias de folga | trabalho na folga | frequência por mês | A: dobra (100%) | todos, com DSR |
 | Prorrogação do adicional noturno | seção "PRORROGAÇÃO DO ADICIONAL NOTURNO" com fato ou "Pedir", e jornada noturna | horário de saída depois das 05h. Em DOS FATOS, uma frase simples: "Nos plantões noturnos, não recebia o adicional noturno em sua integralidade." | P (horas: `calculo.md`) | todos, com DSR |
 | Acúmulo de função e sobrecarga | "ACÚMULO DE FUNÇÃO" | tarefa extra, frequência, desde quando | P: 10% do salário por mês | embutidos (×1,4398) |
@@ -68,7 +68,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Vale-transporte | VT não pago | valor diário e período | P: valor × dias | não |
 | Auxílio-creche | filho na idade da CCT, pedido feito | data de nascimento do filho, valor da CCT | A: valor × meses | não |
 | Participação nos lucros e resultados | PLR prevista e não paga | política ou CCT | F: R$ 500,00 e pedido de exibição dos acordos | não |
-| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 10.000,00 (Q8), com o texto fixo do pedido abaixo | não |
+| Danos morais | "DANO MORAL" | fatos concretos (quem, quando, o quê) | F: R$ 10.000,00 (Q8). Pedido: sem doença ocupacional, o texto fixo "Danos morais (pedido)"; com doença ocupacional, "Danos morais e materiais (pedido)" | não |
 | Doença ocupacional (danos morais e materiais, perícia médica) | seção "DOENÇA OCUPACIONAL / ACIDENTE DE TRABALHO" com fato concreto (ex.: surto, afastamento pelo INSS, tratamento, lesão por sobrecarga). Não precisa de pedido expresso de estabilidade ou readmissão: a regra da estabilidade acidentária não vale aqui | o fato da doença ou do acidente e a ligação com o trabalho (sobrecarga, função, setor) | sem valor próprio: perícia médica (NOMEAR), prontuários, danos morais e danos materiais (linhas abaixo) | não |
 | Danos materiais | tese de doença ocupacional na petição (entra sempre com ela, mesmo sem gasto ou perda na entrevista: é a margem a favor do cliente) ou doença/acidente com gasto ou perda | o fato da doença ou do acidente | F: R$ 10.000,00 | não |
 
@@ -107,6 +107,10 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 >
 > Diante disso, a reclamante faz jus e requer a Vossa Excelência a condenação da reclamada no pagamento da integralidade das dobras dos dias de folga, devendo ser remunerado em dobro (artigo 9º da Lei 605/49), sem prejuízo da remuneração relativa ao dia inserida no salário mensal (Súmula nº 146 do C. TST); apurado pelos controles de jornada, com a integração e reflexos.
 
+**Feriados laborados (pedido).** Regra da advogada: o pedido dos feriados é sempre este texto. Depois dele vêm as linhas da planilha (feriados sem folgas compensatórias e cada reflexo, com o DSR) e o `TOTAL DOS FERIADOS LABORADOS`. Ajuste só o gênero.
+
+> **<letra>-** Seja a reclamada condenada a pagar a integralidade das dobras dos feriados laborados, (artigo 9º da Lei 605/49), sem prejuízo da remuneração relativa ao dia inserida no salário mensal; adicional de 100% com a integração e reflexos nos consectários legais, resultando em:
+
 **Multa do art. 477.** Copie o bloco inteiro do exemplo do banco, mesmo sem pedido de vínculo: o título "DA APLICAÇÃO DA MULTA DO §8º DO ART. 477 DA CLT" (sem "– SÚMULA 462 DO C.TST" no título; a advogada recusou esse acréscimo), o parágrafo do § 6º, o parágrafo e a citação da Súmula 462, os dois parágrafos seguintes ("A tentativa de derrogação..." e "Negar aplicação... PREMIAR O ARDIL...") e o "Do exposto, requer...". Ajuste só o gênero.
 
 **Responsabilidade subsidiária.** Use o texto do exemplo do banco como está. Não cite o Tema 1118 do STF, o contrato entre as reclamadas nem outra jurisprudência.
@@ -133,7 +137,13 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 >
 > e) Caso seja reconhecida a incapacidade laboral da reclamante, requer a Vossa Excelência que seja a reclamada condenada ao pagamento da indenização de aposentadoria por invalidez parcial.
 
-**Danos morais e materiais (pedido).** Regra da advogada: o pedido de danos morais é sempre desta forma, com estas palavras e com este valor. Danos morais e danos materiais valem R$ 10.000,00 cada, sempre (a advogada corrigiu um valor de R$ 30.000,00 que ela mesma tinha escrito). Um pedido com uma lista: a abertura, depois um item por linha. O pontilhado e o valor (ou `NOMEAR;`) vão em negrito. Sem doença ocupacional, tire os itens da perícia, dos prontuários e dos danos materiais e, na abertura, "bem como teve diversos gastos em decorrência dos tratamentos médicos". Ajuste só o gênero.
+**Danos morais (pedido).** Regra da advogada: quando a petição pede só danos morais (sem doença ocupacional), o pedido é sempre este texto, com o inciso I e o valor de R$ 10.000,00. A linha do total é `<p class="total">`. Ajuste só o gênero.
+
+> **<letra>-** seja condenada a reclamada ao pagamento de indenização por danos morais, calculados de acordo com o § 1º - I - do artigo 223-G da CLT, sob pena de revelia e confissão:
+>
+> **TOTAL DOS DANOS MORAIS ........ R$ 10.000,00;**
+
+**Danos morais e materiais (pedido).** Regra da advogada: com doença ocupacional (danos morais e materiais juntos), o pedido é sempre desta forma, com estas palavras e com estes valores. Nunca use este modelo para danos morais sozinhos. Danos morais e danos materiais valem R$ 10.000,00 cada, sempre (a advogada corrigiu um valor de R$ 30.000,00 que ela mesma tinha escrito). Um pedido com uma lista: a abertura, depois um item por linha. O pontilhado e o valor (ou `NOMEAR;`) vão em negrito. Ajuste só o gênero.
 
 > **<letra>-** Ensejando comprovar que a reclamante foi discriminada no labor na reclamada em afronta aos princípios basilares do direito, bem como teve diversos gastos em decorrência dos tratamentos médicos, requer:
 >

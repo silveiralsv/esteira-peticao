@@ -86,7 +86,7 @@ Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da j
 | Danos materiais | R$ 10.000,00 |
 | PLR sem dados | R$ 500,00 |
 
-**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. O padrão é o inciso III, que comporta os R$ 10.000,00 com qualquer salário a partir do mínimo. Se o texto citar o inciso I (3 salários) ou o II (5 salários), o valor não pode passar desse teto.
+**Danos morais e o art. 223-G, § 1º:** o inciso tem de comportar o valor. Os tetos são inciso I (leve) 3 salários, II (média) 5, III (grave) 20 e IV (gravíssima) 50. Exceção: o pedido só de danos morais é texto fixo da advogada (`teses.md`, "Danos morais (pedido)") e cita o inciso I com R$ 10.000,00. Não troque o inciso nem o valor desse pedido, e não escreva nota sobre o teto. Fora desse texto fixo, o padrão é o inciso III, que comporta os R$ 10.000,00 com qualquer salário a partir do mínimo; se outro texto citar o inciso I (3 salários) ou o II (5 salários), o valor não pode passar desse teto.
 
 ## Honorários e valor da causa
 

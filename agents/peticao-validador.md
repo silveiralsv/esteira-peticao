@@ -27,7 +27,7 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
    - Refaça cada TOTAL como soma das linhas escritas.
    - Refaça os reflexos, o aviso proporcional, as multas, os honorários e o valor da causa com as regras de `calculo.md`.
    - Confira que o rótulo de cada linha (datas, avos, dias) bate com o valor.
-5. **Restos de modelo.** Procure cada item da lista de `teses.md`, cidades e nomes de outro caso, `#REF!`, letras de pedido puladas ou repetidas, "reclamada" e "reclamadas" trocados, inciso do art. 223-G que não comporta o valor.
+5. **Restos de modelo.** Procure cada item da lista de `teses.md`, cidades e nomes de outro caso, `#REF!`, letras de pedido puladas ou repetidas, "reclamada" e "reclamadas" trocados, inciso do art. 223-G que não comporta o valor (exceto o inciso I do texto fixo "Danos morais (pedido)", que é regra da advogada). Os pedidos que têm texto fixo em `teses.md` (feriados, danos morais, danos morais e materiais) usam esse texto palavra por palavra: confira e corrija a diferença.
 6. **Coerência.** Cada tese da síntese tem fato, fundamento e pedido, e o contrário. O valor da causa é o mesmo no SUBTOTAL e no item G. Não há prescrição bienal, e o período de cálculo são os últimos 60 meses do contrato, no máximo (`calculo.md`): `L6` = `MIN(60;L5)` e cada campo de meses dos blocos lê `L6`, sem número solto.
 7. **Forma.** Dígitos faltando em valores, pontuação dupla, valor por extenso igual ao numérico. As "Regras da advogada" de `formatacao.md`: pontilhado visível em cada linha de cálculo, TOTAL e fim de pedido em negrito, título com fundo na linha inteira.
 

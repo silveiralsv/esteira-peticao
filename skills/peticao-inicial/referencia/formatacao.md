@@ -29,7 +29,7 @@ O modelo tem um parágrafo de exemplo por papel. Cada bloco do HTML copia a form
 | `<p>` | corpo | parágrafo comum, com recuo de primeira linha |
 | `<blockquote><p>` | citação | lei, súmula, jurisprudência |
 | `<li>` | lista | itens da síntese (com marcador) |
-| `<p class="pedido">` | pedido | `<b>A-</b> Seja ...`. Pedido sem valor termina com o pontilhado e `DECLARAR;`, `EXPEDIR;`, `DEFERIR.` etc. Pedido de valor fixo (multa do PPP, danos morais) termina com o pontilhado e o valor. O pontilhado e a palavra ou o valor do fim vão em `<b>` |
+| `<p class="pedido">` | pedido | `<b>A-</b> Seja ...`. Pedido sem valor termina com o pontilhado e `DECLARAR;`, `EXPEDIR;`, `DEFERIR.` etc. Pedido de valor fixo (multa do PPP) termina com o pontilhado e o valor. O pedido só de danos morais fecha com uma linha `total` (`teses.md`, "Danos morais (pedido)"). O pontilhado e a palavra ou o valor do fim vão em `<b>` |
 | `<p class="item">` | linha de valor | `Horas extras ........ R$ 7.338,46;` O script escreve os pontos até perto do valor, e o valor fica alinhado à direita |
 | `<p class="total">` | total | `TOTAL DAS HORAS EXTRAS ........ R$ 10.180,98;` em negrito |
 | `<p class="subtotal">` | subtotal | `SUBTOTAL em <data> R$ <valor> (<extenso>)` |
