@@ -56,17 +56,18 @@ Sobre a verba principal X, com 2 casas decimais em cada linha:
 
 - Insalubridade e periculosidade não têm DSR.
 - Sem aviso prévio indenizado (pessoa ainda empregada sem rescisão indireta, ou pedido de demissão mantido), tire a linha do aviso.
+- Com a reversão do pedido de demissão (rescisão indireta), a saída vale como dispensa sem justa causa: todos os blocos têm as linhas do aviso prévio e da multa de 40% (e o acúmulo usa o ×1,4398).
 - O TOTAL do bloco é a soma exata das linhas escritas, já arredondadas.
 
 ## Verbas rescisórias
 
 Use só nas teses que mudam a forma de saída (rescisão indireta, nulidade da justa causa, vínculo) ou quando a rescisão não foi paga.
 
-- **Sem TRCT:** calcule só a verba que a entrevista aponta como não paga (ex.: férias vencidas). Não acrescente verba proporcional ou outra verba que a entrevista não cita.
+- **Sem TRCT:** calcule só a verba que a entrevista aponta como não paga (ex.: férias vencidas). Não acrescente verba proporcional ou outra verba que a entrevista não cita. Exceção: na tese que muda a forma de saída (reversão do pedido de demissão, rescisão indireta, nulidade da justa causa, vínculo), calcule todos os direitos da dispensa sem justa causa, nas linhas do pedido fixo de `teses.md`, uma vez só.
 - **Aviso prévio proporcional:** 30 dias + 3 dias por ano completo de serviço, até 90 dias. O tempo do aviso conta para completar o ano (OJ 82 da SDI-1). Ex.: 3 anos e 11 meses de contrato + 30 dias de aviso = 4 anos completos, então 42 dias.
 - **Valor do aviso:** salário / 30 × dias.
 - **Reflexos do aviso:** 13º = valor / 12 × (dias / 30); férias e 1/3 da mesma forma.
-- **13º proporcional:** avos do ano corrente até a saída projetada pelo aviso. Mês com 15 dias ou mais vale 1 avo.
+- **13º proporcional:** avos do ano corrente até a saída projetada pelo aviso. Mês com 15 dias ou mais vale 1 avo. Se o pedido tem as linhas "13º salário sobre o aviso prévio" e "Férias sobre o aviso prévio" (pedido da reversão), os avos do 13º e das férias proporcionais vão só até a saída, sem a projeção: a projeção já está nessas linhas. Não conte o aviso duas vezes.
 - **Férias proporcionais:** avos do período aquisitivo corrente até a saída projetada, mais 1/3. Férias vencidas não gozadas entram em dobro se o período concessivo acabou.
 - **Saldo de salário:** dias trabalhados no mês da saída, se não foram pagos.
 - **FGTS:** só peça "FGTS não depositado" com extrato ou afirmação clara do cliente. A multa de 40% incide sobre os depósitos do contrato inteiro.
