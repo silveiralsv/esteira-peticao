@@ -42,7 +42,7 @@ O conector pode recusar a referência a um arquivo em `$TMPDIR` ("Nothing was up
 | Petição | `application/vnd.openxmlformats-officedocument.wordprocessingml.document` (docx gerado por `scripts/gerar_docx.py`) | deixe converter (vira Google Doc com o papel timbrado) |
 | Relatório, Doc de perguntas | `text/html` | deixe converter (vira Google Doc) |
 | Planilha | `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet` | deixe converter (vira Google Sheet, que calcula as fórmulas) |
-| `log.txt` | `text/plain` | `disableConversionToGoogleType: true` |
+| `log.txt`, `texto-da-esteira.txt` | `text/plain` | `disableConversionToGoogleType: true` |
 
 O conector Google Drive não edita o conteúdo de um arquivo que já existe. Dentro de uma rodada, para mudar um arquivo que a própria rodada criou, crie a versão nova e só então mande a antiga para a lixeira (`trash_file`).
 
@@ -88,6 +88,7 @@ O comentário fica ancorado no trecho e aparece com o nome da conta do usuário.
 - `PETIÇÃO INICIAL <NOME DO CLIENTE>`: um por cliente, criado na primeira rodada e depois mudado no lugar
 - `RELATÓRIO DE VALIDAÇÃO <NOME DO CLIENTE> - rodada N`
 - `log.txt`
+- `texto-da-esteira.txt`: o texto da petição como a esteira deixou no fim da última rodada, com as sugestões aceitas. O modo aprendizado compara a petição com ele
 
 Petições e planilhas antigas podem ter ` - rodada 1` no fim do título. O orquestrador tira o sufixo na rodada seguinte.
 
@@ -123,4 +124,4 @@ O que entra no log:
 
 O log não leva CPF, RG nem endereço do cliente. Use o nome do arquivo e o campo, não o dado pessoal.
 
-No fim da rodada, o orquestrador sobe o `log.txt` novo e manda o antigo para a lixeira.
+No fim da rodada, o orquestrador sobe o `log.txt` e o `texto-da-esteira.txt` novos e manda os antigos para a lixeira.

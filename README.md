@@ -45,10 +45,22 @@ O agente `peticao-revisor` lê os comentários abertos e trabalha no mesmo Doc. 
 
 - Cada correção entra como **sugestão**, que o advogado aceita ou rejeita. Valores mudam também na planilha, no lugar.
 - Cada comentário tratado ganha um comentário `[ESTEIRA]` no mesmo trecho, dizendo o que foi feito. O conector não responde dentro da thread do advogado.
-- Comentário com "sempre", "nunca" ou "em todas as petições" vira regra em `referencia/`, para as próximas petições. Revise o `git diff` e faça o commit.
+- Comentário com "sempre", "nunca" ou "em todas as petições" fica no log como regra candidata. Ela entra na esteira com `--learn`.
 - Cada comentário, célula mudada e regra nova vai para o `log.txt`.
 
 Precisa do conector Google Workspace (Google Docs e Google Sheets), além do Google Drive.
+
+### Aprender com a revisão do advogado
+
+```
+/peticao-inicial --learn <link da pasta do cliente ou do Doc da petição>
+```
+
+Use quando o advogado já revisou a petição e você quer que a esteira aprenda. A esteira lê os comentários e as respostas (abertos e resolvidos), as respostas das perguntas e as edições diretas do advogado. Para achar as edições, ela compara a petição com o `texto-da-esteira.txt`, que cada rodada grava em `O resultado`.
+
+Cada padrão geral vira regra em `referencia/` ou nos agentes, sem dado do cliente. Depois a esteira faz commit e push na `main`. Ela não muda a petição nem roda rodada nova. O que não dá para saber se vale para todos volta como dúvida para o advogado.
+
+Sem a flag, a esteira só executa e não grava regra.
 
 ### Modelo e esforço
 
@@ -112,7 +124,7 @@ skills/peticao-inicial/config.example.md
 | Q6 | Os agentes podem buscar dados fora da pasta (CNPJ, vara, CCT, salário mínimo), sempre citando a fonte. |
 | Q7 | O escritório autorizou o envio dos dados dos clientes ao modelo. |
 | Q8 | Danos morais: R$ 10.000,00. O pedido só de danos morais usa o texto fixo da advogada, com o inciso I do art. 223-G; com doença ocupacional, o pedido de danos morais e materiais (R$ 10.000,00 cada). |
-| Q12 | A esteira é uma skill: `/peticao-inicial <link>`. |
+| Q12 | A esteira é uma skill: `/peticao-inicial <link>`. Com `--learn`, ela só aprende com a revisão do advogado e sobe as regras na `main`. |
 | Q15 | O Doc de perguntas tem o campo `Responde: eu / escritório`. |
 
 ## Privacidade
