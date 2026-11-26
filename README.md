@@ -10,7 +10,7 @@ Esteira de agentes do Claude Code que escreve a **petição inicial trabalhista*
 
 A pasta do cliente tem duas subpastas:
 
-- `O que eu recebo`: sempre tem procuração, entrevista e CTPS. Outros documentos são opcionais.
+- `O que eu recebo`: só a entrevista é obrigatória. Se faltar procuração, CTPS ou outro documento, a petição sai com o que há. Cada dado que falta fica como `[PENDENTE: ...]` no texto, com um comentário `[ESTEIRA] Pendência` no Doc que diz o documento que falta, e entra na "Mensagem para o escritório" do relatório.
 - `O resultado`: onde a esteira grava tudo. Se não existir, a esteira cria.
 
 O modelo de cálculo (xlsx zerado) e o modelo de petição em papel timbrado (docx com o logo e o rodapé do escritório) são os mesmos para todos os clientes e ficam no Drive do escritório. Os links vão em `config.local.md`. A esteira nunca altera os modelos; ela trabalha em cópias.

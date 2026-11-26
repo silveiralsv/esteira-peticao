@@ -93,7 +93,7 @@ Chame o subagente `peticao-validador` com os mesmos dados (na rodada de ajuste, 
    - os links do que foi criado em `O resultado`. Na rodada de ajuste, o link da petição e da planilha, que são os mesmos, e que as mudanças estão como sugestões para o advogado aceitar ou rejeitar;
    - na rodada de ajuste, a tabela do Revisor e as regras candidatas, que entram na esteira com `/peticao-inicial --learn <link>`;
    - o que o advogado precisa conferir (as notas do Validador e as teses novas);
-   - se houver pendências (falta documento, e a petição saiu só com a entrevista), a "Mensagem para o escritório" do relatório, pronta para copiar;
+   - se houver pendências (falta documento, e a petição saiu com o que havia): que cada uma tem um comentário `[ESTEIRA] Pendência` no Doc, e a "Mensagem para o escritório" do relatório, pronta para copiar;
    - se houver Doc de perguntas, que ele responda e rode `/peticao-inicial` de novo com o mesmo link.
 
 Se qualquer agente falhar, não invente o resultado. Registre a falha no log, faça o Passo 5 e diga o que falhou.

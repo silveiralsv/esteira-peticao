@@ -77,7 +77,7 @@ Não liste o que os comentários do advogado pedem; o Revisor lê os comentário
 
 ## Passo 8A. Pendências
 
-Pendência é um dado que a petição precisa e que nenhum documento da pasta traz, porque falta o documento (procuração, CTPS, holerite, TRCT). Não é pergunta e não bloqueia. Para cada uma, grave no dossiê: campo, onde entra na petição, motivo e o documento que resolve. Ex.: `RG e CPF · preâmbulo · sem procuração, e a entrevista não traz · procuração ou documento de identidade`. Dúvida de tese ou de critério continua pergunta (Passo 10).
+Pendência é um dado que a petição precisa e que nenhum documento da pasta traz, porque falta o documento (procuração, CTPS, holerite, TRCT). Não é pergunta e não bloqueia. Para cada uma, grave no dossiê: campo, onde entra na petição, motivo, o documento que resolve e o que a petição usa no lugar (ex.: o salário da entrevista), se usa. Ex.: `RG e CPF · preâmbulo · sem procuração, e a entrevista não traz · procuração ou documento de identidade`. Dúvida de tese ou de critério continua pergunta (Passo 10).
 
 ## Passo 9. Veredito
 
