@@ -66,3 +66,21 @@ for rotulo, valor, negrito in [("Horas extras", "R$ 2.876,49;", False),
     assert RECUO_PT + largura(texto, negrito) + largura(val, negrito) <= TAB_PT, (rotulo, texto)
     assert len(texto) - len(rotulo) > 40, texto
 print("ok pontilhado")
+
+# Linhas em branco da advogada e SUBTOTAL com tabulações e R$ junto do número.
+with tempfile.TemporaryDirectory() as d:
+    modelo, html, saida = (os.path.join(d, n) for n in ("m.docx", "p.html", "s.docx"))
+    m = Document()
+    for papel in ("corpo", "enderecamento", "em-face", "subtotal", "fecho"):
+        m.add_paragraph("{{%s}}" % papel)
+    m.save(modelo)
+    open(html, "w", encoding="utf-8").write(
+        '<p class="enderecamento">AO JUÍZO</p><p>PREÂMBULO</p><p class="em-face">em face de X</p>'
+        '<p class="local">Local</p><p class="subtotal"><b>SUBTOTAL em 1 de maio de 2027 R$ 1,00 (um real).</b></p>'
+        '<p>G – valor</p><p class="fecho">Termos em que,</p><p class="fecho">Pede deferimento.</p>')
+    gerar(modelo, html, saida)
+    textos = [p.text for p in Document(saida).paragraphs]
+    assert textos == ["AO JUÍZO", "", "", "", "PREÂMBULO", "em face de X", "", "", "Local",
+                      "SUBTOTAL em 1 de maio de 2027 \t\t\t\t\tR$1,00 (um real).", "", "G – valor", "",
+                      "Termos em que,", "Pede deferimento."], textos
+print("ok linhas em branco")

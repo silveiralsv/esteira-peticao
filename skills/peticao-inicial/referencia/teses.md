@@ -45,7 +45,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Verbas rescisórias | a entrevista diz expressamente que a rescisão não foi paga ou foi paga a menor | o que não foi pago (TRCT ou entrevista) | P | — |
 | Multa do art. 467 | a entrevista pede expressamente | verbas rescisórias incontroversas não pagas | P: 50% do total das rescisórias | não |
 | Multa do art. 477 | a entrevista pede expressamente | data do pagamento ou não pagamento | P: 1 remuneração | não |
-| Diferenças de FGTS | a entrevista diz expressamente que faltam depósitos | extrato do FGTS ou afirmação clara do cliente, com período | A: 8% × remuneração × meses + 40% | não |
+| Diferenças de FGTS | a entrevista diz expressamente que faltam depósitos | extrato do FGTS ou afirmação clara do cliente, com período. Sem nenhum depósito, o fundamento diz "gerando valor que deve ser apurado e recolhido", não "diferenças" (regra da advogada) | A: 8% × remuneração × meses + 40% | não |
 | Responsabilidade subsidiária | seção "RESPONSABILIDADE SUBSIDIÁRIA" com um tomador indicado (com ou sem a palavra "Sim"), mesmo numa frase só | tomador. Não exige prova da falta de fiscalização nem o contrato ou convênio entre as reclamadas | sem valor (DECLARAR) | — |
 | Horas extras / invalidade do banco de horas / 12x36 | "HORAS EXTRAS" | minutos por dia ou plantão e frequência (quanto contar: `calculo.md`). Em DOS FATOS, uma frase sucinta: o tempo que excedia e a frequência, sempre com "e a reclamada não realizava o pagamento dos minutos excedentes como hora extra". O banco de horas não entra em DOS FATOS; ele fica nos fundamentos | P | todos, com DSR |
 | Intervalo intrajornada | seção "INTERVALO" com o pedido | minutos usufruídos | P: minutos suprimidos, natureza indenizatória | não |
@@ -53,7 +53,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Labor em dias de folga | trabalho na folga | frequência por mês | A: dobra (100%) | todos, com DSR |
 | Prorrogação do adicional noturno | seção "PRORROGAÇÃO DO ADICIONAL NOTURNO" com fato ou "Pedir", e jornada noturna | horário de saída depois das 05h. Em DOS FATOS, uma frase simples: "Nos plantões noturnos, não recebia o adicional noturno em sua integralidade." | P (horas: `calculo.md`) | todos, com DSR |
 | Acúmulo de função e sobrecarga | "ACÚMULO DE FUNÇÃO" | tarefa extra, frequência, desde quando | P: 10% do salário por mês | embutidos (×1,4398) |
-| Desvio de função | função diferente da contratada | função real, diferença salarial média. "Contratado como X, mas cumpria a função de Y" = desde a admissão até a promoção (ou até a saída) | A: diferença × meses. Sem diferença na entrevista: piso da função exercida − salário (`calculo.md`) | todos, com DSR |
+| Desvio de função | função diferente da contratada | função real, diferença salarial média. "Contratado como X, mas cumpria a função de Y" = desde a admissão até a promoção (ou até a saída) | A: diferença × meses. Sem diferença na entrevista: piso da função exercida − salário; sem piso da função na CCT, o salário base da categoria da função exercida (`calculo.md`). Regra da advogada: o pedido sai sempre calculado, nunca A APURAR, com as linhas do pedido do banco ("Diferenças salariais", uma linha por reflexo e `TOTAL DAS DIFERENÇAS SALARIAIS`) | todos, com DSR |
 | Equiparação salarial | colega com mesma função e salário maior | paradigma, diferença, período | P: diferença × meses | todos, com DSR |
 | Salário-substituição | substituiu um superior | cargo substituído, diferença, período | A: diferença × meses de substituição | todos, com DSR |
 | Diferenças de insalubridade | "INSALUBRIDADE" preenchida | setor, agente, frequência, % pago | P: (40% − % pago) × SM × meses | sem DSR |
@@ -74,7 +74,9 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 
 ## Seções que dependem de outra tese
 
-- **Levantamento do FGTS** (seção e pedido "EXPEDIR"): em todas as petições, mesmo sem pedido de FGTS. É fixo no modelo do escritório.
+- **Levantamento do FGTS** (seção e pedido "EXPEDIR"): em todas as petições, mesmo sem pedido de FGTS. É fixo no modelo do escritório. O pedido é sempre esta linha, com o pontilhado até o fim da linha (regra da advogada; são 111 pontos):
+
+  > **A-** Expedição de alvará/determinação de liberação de guias, ou ofício à Caixa Econômica Federal para liberação dos depósitos de FGTS realizados em decorrência da presente ação **............................................................................................................... EXPEDIR;**
 - **Guias SD e FGTS** (pedido "EMITIR"): rescisão indireta, nulidade da justa causa e vínculo.
 - **Reversão do pedido de demissão:** a síntese tem "Nulidade do Pedido de Demissão" logo antes de "Verbas Rescisórias". Nos fundamentos, "DA NULIDADE DO PEDIDO DE DEMISSÃO – CONVERSÃO EM RESCISÃO INDIRETA DO CONTRATO DE TRABALHO" vem antes de "DAS VERBAS RESCISÓRIAS". Nos pedidos, a nulidade e as verbas rescisórias são **um pedido só**, com um cálculo só (regra da advogada: não calcule as rescisórias duas vezes). Use os textos fixos abaixo.
 - **Ofícios à Receita Federal, INSS, DRT e Polícia Federal:** só com FGTS não depositado comprovado.
@@ -160,6 +162,16 @@ A lista dos direitos violados sai dos pedidos da própria petição: um item par
 > 1/3 constitucional sobre as férias proporcionais ........ R$ <valor>;
 > Multa de 40% do FGTS ........ R$ <valor>;
 > **TOTAL DAS VERBAS RESCISÓRIAS ........ R$ <valor>;**
+
+**Imposto de renda e recolhimentos previdenciários.** Regra da advogada: esta seção é fixa e nunca é alterada. Copie o título e os três parágrafos palavra por palavra, em todas as petições. Ajuste só o gênero.
+
+> IMPOSTO DE RENDA E RECOLHIMENTOS PREVIDENCIÁRIOS:
+>
+> Caso o reclamante tenha que arcar com alguma parcela a título de Imposto de Renda, deverá ser observada a natureza de cada parcela deferida, se remuneratória ou indenizatória, sendo determinado por V.Exa. que somente se efetuem recolhimentos se as parcelas mensais devidas, assim calculadas, ultrapassarem o limite de isenção mensal, já que foi o não cumprimento do contrato pela reclamada que gerou o pagamento acumulado de diferenças geradas mês a mês, de modo que se estas parcelas tivessem sido pagas no momento correto, o reclamante estaria isento do pagamento de Imposto de Renda. Incide em espécie o anexo III da IN RFB 1.558/2015.
+>
+> Ainda, deverá ser observado que juros de mora são mera punição ao empregador inadimplente, conforme dispõe a Lei 8.541/92, estando isento da incidência do Imposto de Renda. Incide em espécie a Súmula 53 do Egr. TRT da 4ª Região.
+>
+> Já quanto aos descontos previdenciários, deverá ser observado o valor do teto máximo de contribuição previsto pela Previdência Social.
 
 **Multa do art. 477.** Copie o bloco inteiro do exemplo do banco, mesmo sem pedido de vínculo: o título "DA APLICAÇÃO DA MULTA DO §8º DO ART. 477 DA CLT" (sem "– SÚMULA 462 DO C.TST" no título; a advogada recusou esse acréscimo), o parágrafo do § 6º, o parágrafo e a citação da Súmula 462, os dois parágrafos seguintes ("A tentativa de derrogação..." e "Negar aplicação... PREMIAR O ARDIL...") e o "Do exposto, requer...". Ajuste só o gênero.
 

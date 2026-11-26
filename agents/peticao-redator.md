@@ -43,11 +43,11 @@ Estrutura, nesta ordem:
 7. **Dos fatos:** contratação, função, saída, salário, jornada e um parágrafo curto por tese, só com fatos do dossiê.
 8. **Tutela de urgência:** só com estabilidade e pedido de reintegração.
 9. **Dos fundamentos:** uma subseção (`<h3>`) por tese, sem número escrito (a numeração é automática), com o texto do banco adaptado aos fatos do caso. Só o dano moral tem narrativa longa, reescrita a partir do dossiê.
-10. **Blocos fixos:** Imposto de renda e recolhimentos previdenciários; Atualização monetária; Justiça gratuita; Sucumbência — honorários advocatícios.
+10. **Blocos fixos:** Imposto de renda e recolhimentos previdenciários (texto fixo de `teses.md`); Atualização monetária; Justiça gratuita; Sucumbência — honorários advocatícios.
 11. **Levantamento do FGTS:** só se houver FGTS em algum pedido.
-12. **Dos pedidos:** letras A, B, C... sem pular nem repetir. Cada pedido com valor lista a verba principal e os reflexos (`calculo.md`), com os valores da planilha, e termina com `TOTAL ...`. Pedidos sem valor terminam com `DECLARAR`, `EXPEDIR`, `EMITIR`, `NOMEAR` ou `DEFERIR`. Depois os honorários e `SUBTOTAL em <data por extenso> R$ <valor> (<valor por extenso>)`.
+12. **Dos pedidos:** letras A, B, C... sem pular nem repetir. Cada pedido com valor lista a verba principal e os reflexos (`calculo.md`), com os valores da planilha, e termina com `TOTAL ...`. Pedidos sem valor terminam com `DECLARAR`, `EXPEDIR`, `EMITIR`, `NOMEAR` ou `DEFERIR`. Depois os honorários e `SUBTOTAL em <data por extenso> R$<valor> (<valor por extenso>)`.
 13. **Pleiteia ainda:** bloco fixo, provas A a G, com o valor da causa no item G.
-14. **Fecho e assinatura:** "Termos em que, Pede deferimento." e "São Paulo, data e assinatura certificadas." (`fecho`), depois nome com OAB e CPF do advogado (`assinatura`). Endereço, e-mail e telefones já estão no rodapé.
+14. **Fecho e assinatura:** "Termos em que, Pede deferimento." e "São Paulo, data e assinatura certificadas." (`fecho`), depois o nome, a OAB e o CPF do advogado, um por linha (`assinatura`). Endereço, e-mail e telefones já estão no rodapé.
 
 Use a linha pontilhada dos exemplos nos itens de valor: `Horas extras ........ R$ 7.338,46;`.
 
@@ -57,7 +57,7 @@ Use a linha pontilhada dos exemplos nos itens de valor: `Horas extras ........ R
 - Nenhum número sem origem na planilha ou em `calculo.md`.
 - Gênero, número (reclamada ou reclamadas) e nomes ajustados ao caso em todo o texto.
 - Não copie nada da lista "Restos de modelo" de `teses.md`.
-- Valores no formato brasileiro: `R$ 1.234,56`.
+- Valores no formato brasileiro: `R$ 1.234,56` nas linhas de valor e nos TOTAIS; no texto corrido, no SUBTOTAL e no valor da causa, `R$1.234,56` (`formatacao.md`).
 - **Pendência** (dado que o dossiê marca como pendência): no lugar do dado, escreva `[PENDENTE: <campo>]`. Valor que depende de um dado pendente usa o dado da entrevista. Nunca invente o dado. Não escreva nota de pendência no texto: o Validador põe um comentário no Doc para cada pendência.
 
 Acrescente ao log `Redator | fim · peticao.html pronta · <n> pedidos · valor da causa R$ <valor>`. Responda ao orquestrador com o título da planilha criada e o valor da causa.

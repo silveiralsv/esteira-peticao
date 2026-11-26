@@ -22,6 +22,9 @@ from pontilhado import pontos
 TAG_PAPEL = {"h1": "titulo", "h2": "secao", "h3": "subsecao", "li": "lista", "p": "corpo"}
 BLOCOS = set(TAG_PAPEL) | {"blockquote"}
 LINHA_VALOR = {"item", "total", "subtotal"}
+# Linhas em branco que a advogada deixa depois de cada papel (formatacao.md).
+EM_BRANCO_DEPOIS = {"enderecamento": 3, "em-face": 2, "subtotal": 1}
+TABS_SUBTOTAL = 5
 PONTILHADO = re.compile(r"\s*(?:\.|…){4,}\s*")
 NUMERO_MANUAL = re.compile(r"^\s*\d+(?:\.\d+)*\.?\s+")
 # Ordem dos filhos de w:rPr exigida pelo schema do Word.
@@ -106,7 +109,7 @@ def novo_rpr(base, marcas, destacar):
 def novo_run(texto, marcas, base, destacar=False, tab=False):
     r = OxmlElement("w:r")
     r.append(novo_rpr(base, marcas, destacar))
-    if tab:
+    for _ in range(int(tab)):
         r.append(OxmlElement("w:tab"))
     for k, parte in enumerate(texto.split("\n")):
         if k:
@@ -115,6 +118,19 @@ def novo_run(texto, marcas, base, destacar=False, tab=False):
             t = OxmlElement("w:t"); t.set(qn("xml:space"), "preserve"); t.text = parte
             r.append(t)
     return r
+
+
+def em_branco(p, n, fim):
+    """n parágrafos vazios com o formato de p, como um Enter no fim dele."""
+    for _ in range(n):
+        vazio = copy.deepcopy(p)
+        for filho in list(vazio):
+            if filho.tag != qn("w:pPr"):
+                vazio.remove(filho)
+        ppr = vazio.find(qn("w:pPr"))
+        if ppr is not None and ppr.find(qn("w:numPr")) is not None:
+            ppr.remove(ppr.find(qn("w:numPr")))  # sem número nem marcador
+        fim.addprevious(vazio)
 
 
 def texto_de(p):
@@ -167,6 +183,11 @@ def gerar(modelo, html, saida):
                 rotulo, valor = " ".join(partes[:-1]).strip(), partes[-1].strip()
                 p.append(novo_run(f"{rotulo} {pontos(rotulo, valor, negrito)}", marcas, base_r))
                 p.append(novo_run(valor, marcas, base_r, tab=True))
+            elif papel == "subtotal" and "R$" in inteiro:
+                # SUBTOTAL da advogada: valor longe da data, com tabulações, e R$ junto do número.
+                rotulo, valor = inteiro.split("R$", 1)
+                p.append(novo_run(rotulo.rstrip() + " ", marcas, base_r))
+                p.append(novo_run("R$" + valor.lstrip(), marcas, base_r, tab=TABS_SUBTOTAL))
             else:
                 p.append(novo_run(inteiro, marcas, base_r))
         else:
@@ -176,7 +197,10 @@ def gerar(modelo, html, saida):
             # Encerramento: linhas do fecho juntas; só o último fecho leva o espaço do modelo.
             ppr = anterior[1].get_or_add_pPr()
             ppr.spacing_before = ppr.spacing_after = 0
+        if papel == "fecho" and anterior is not None and anterior[0] != "fecho":
+            em_branco(anterior[1], 1, fim)  # linha em branco antes de "Termos em que,"
         fim.addprevious(p)
+        em_branco(p, EM_BRANCO_DEPOIS.get(papel, 0), fim)
         anterior = (papel, p)
     doc.save(saida)
     if faltando:

@@ -12,7 +12,7 @@ Estas regras saem da petição de referência e das petições do banco de teses
 | Adicional de horas extras | Função | Enfermagem (auxiliar, técnico ou enfermeiro): 90%. Outras funções: 50%. Não precisa de CCT nem de pergunta. |
 | Adicional noturno | Planilha | 20%, fixo no modelo de cálculo. |
 | Pisos e benefícios | CCT da categoria | Q6: busque na internet (sindicato ou Mediador do MTE) e cite o endereço. Se não achar, crie uma pergunta (exceto a diferença salarial, na linha abaixo). |
-| Diferença salarial sem valor na entrevista (desvio de função e parecidas) | CCT da categoria ou lei | Piso da função exercida − salário, sem pergunta. Sem CCT com o piso, use o piso legal da profissão. |
+| Diferença salarial sem valor na entrevista (desvio de função e parecidas) | CCT da categoria ou lei | Piso da função exercida − salário, sem pergunta. Se a CCT não tem piso próprio da função, use o salário base da categoria da função exercida (regra da advogada). Sem CCT, use o piso legal da profissão. O pedido nunca sai A APURAR por falta desse valor. |
 | Frequência "com frequência" sem número | Regra do escritório | Pelo menos 3 ocorrências, nunca uma só. Exceção expressa à regra 4 de "Horas extras: quanto contar" e a "nunca invente frequência" (`teses.md`). Número dado pela entrevista ou pelo advogado vence o padrão. |
 | Salário mínimo | Planilha | Use o valor da planilha. Se ele não for o do ano corrente, use o valor oficial e cite a fonte. |
 | Data de referência | Dia da rodada | É a data do "SUBTOTAL em ..." e a base da prescrição bienal. |
