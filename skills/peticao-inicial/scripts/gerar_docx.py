@@ -152,7 +152,7 @@ def gerar(modelo, html, saida):
 
     leitor = LeitorHTML()
     leitor.feed(open(html, encoding="utf-8").read())
-    faltando = set()
+    faltando, longas = set(), []
     anterior = None  # (papel, parágrafo) do último bloco escrito
     for papel, trechos in leitor.blocos:
         trechos = [(t, m) for t, m in trechos if t]
@@ -181,7 +181,10 @@ def gerar(modelo, html, saida):
             if len(partes) >= 2:
                 # O Google Docs perde o pontilhado da tabulação: os pontos vão no texto.
                 rotulo, valor = " ".join(partes[:-1]).strip(), partes[-1].strip()
-                p.append(novo_run(f"{rotulo} {pontos(rotulo, valor, negrito)}", marcas, base_r))
+                pts = pontos(rotulo, valor, negrito)
+                if pts == "...":
+                    longas.append(rotulo)  # rótulo não cabe: o valor desce para a linha de baixo
+                p.append(novo_run(f"{rotulo} {pts}", marcas, base_r))
                 p.append(novo_run(valor, marcas, base_r, tab=True))
             elif papel == "subtotal" and "R$" in inteiro:
                 # SUBTOTAL da advogada: valor longe da data, com tabulações, e R$ junto do número.
@@ -205,6 +208,8 @@ def gerar(modelo, html, saida):
     doc.save(saida)
     if faltando:
         print("Papéis sem exemplo no modelo (usei 'corpo'):", ", ".join(sorted(faltando)), file=sys.stderr)
+    if longas:
+        print("Linhas de valor que não cabem numa linha (encurte o rótulo):", "; ".join(longas), file=sys.stderr)
 
 
 if __name__ == "__main__":

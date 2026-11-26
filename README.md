@@ -117,7 +117,7 @@ skills/peticao-inicial/config.example.md
 | | Decisão |
 |---|---|
 | Q1 | Um modelo de cálculo zerado, o mesmo para todos os clientes, é copiado e preenchido a cada petição. |
-| Q2 | Tese sem fato do caso não entra e vira pergunta. Só bloqueia se for a tese principal. |
+| Q2 | Tese sem fato do caso não entra e vira pergunta. Só bloqueia se for a tese principal. Exceção (dono do escritório): com a seção de insalubridade ou de periculosidade na entrevista, mesmo em branco, a tese entra, com o requerimento do PPP. |
 | Q3 | O banco de teses é uma pasta do Drive com petições do escritório. |
 | Q4 | Quando a entrevista e a CTPS divergem, vale a CTPS. |
 | Q5 | O Validador corrige erros objetivos. Fato sem fonte sai e vira nota para o advogado. |

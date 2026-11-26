@@ -29,7 +29,7 @@ Leia a procuração. Confira:
 
 O preâmbulo da petição copia essa qualificação sem mudar nada. Guarde o texto exato no dossiê.
 
-**Sem procuração:** a qualificação sai da entrevista. Cada campo que a entrevista não traz é pendência, e a própria procuração também (o escritório precisa dela para protocolar).
+**Sem procuração:** a qualificação sai da entrevista. Cada campo que a entrevista não traz é pendência, e a própria procuração também (o escritório precisa dela para protocolar). CTPS e PIS não são campos da qualificação: sem o número, não viram pendência (`formatacao.md`, preâmbulo).
 
 ## Passo 3. CTPS
 
@@ -40,7 +40,7 @@ A carteira pode ter vários contratos. Ache o contrato com o empregador da entre
 ## Passo 4. Entrevista
 
 1. Leia cada seção. Para cada seção de tese do catálogo, veja se a entrevista traz o pedido: seção preenchida, "Pedir" ou fato concreto. Siga "Como o escritório decide" em `teses.md`.
-2. Seção em branco: a tese fica fora, sem pergunta. "Avaliar": vira pergunta.
+2. Seção em branco: a tese fica fora, sem pergunta, exceto insalubridade, periculosidade e reversão do pedido de demissão, que entram (`teses.md`). "Avaliar": vira pergunta.
 3. Aplique Q2 como está em `teses.md`. Se a tese principal estiver sem fato, o veredito é Bloqueado.
 4. Para os danos morais, liste os fatos com quem, quando e o quê. Não copie nomes de terceiros para o log.
 

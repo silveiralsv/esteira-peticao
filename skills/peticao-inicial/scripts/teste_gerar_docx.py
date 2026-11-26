@@ -84,3 +84,9 @@ with tempfile.TemporaryDirectory() as d:
                       "SUBTOTAL em 1 de maio de 2027 \t\t\t\t\tR$1,00 (um real).", "", "G – valor", "",
                       "Termos em que,", "Pede deferimento."], textos
 print("ok linhas em branco")
+
+# Rótulo longo não cabe (só 3 pontos, o gerar_docx avisa); o rótulo curto da advogada cabe.
+from pontilhado import pontos
+assert pontos("Integração e reflexos das diferenças do acúmulo de função na multa de 40% do FGTS", "R$ 1.234,56;") == "..."
+assert len(pontos("Integração e reflexos das diferenças do acúmulo de função na multa de 40%", "R$ 1.234,56;")) > 3
+print("ok rótulo longo")

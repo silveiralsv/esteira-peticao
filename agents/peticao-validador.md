@@ -41,13 +41,13 @@ Registre no `log.txt` cada passo. Primeira linha, no formato do log, com data e 
   ```
 
 - **Ponto de julgamento** (tese fraca, critério de tese com um exemplo só, estimativa): não reescreva. Deixe uma nota no mesmo formato. Para tese com um exemplo só, a nota diz "tese nova, confira o critério".
-- **Sem nota contra as regras do escritório.** Não escreva nota contra o que "Como o escritório decide" (`teses.md`) e `calculo.md` mandam fazer: tese que a entrevista pede, maior valor da faixa, insalubridade e periculosidade juntas, responsabilidade subsidiária sem prova, levantamento do FGTS, horas de relógio na prorrogação noturna, valor padrão do modelo de cálculo (ex.: 10 feriados por ano). Nota é para erro, fato sem fonte e dúvida que nenhuma regra resolve.
+- **Sem nota contra as regras do escritório.** Não escreva nota contra o que "Como o escritório decide" (`teses.md`) e `calculo.md` mandam fazer: tese que a entrevista pede, maior valor da faixa, insalubridade e periculosidade juntas (mesmo com a seção em branco), responsabilidade subsidiária sem prova, levantamento do FGTS, horas de relógio na prorrogação noturna, valor padrão do modelo de cálculo (ex.: 10 feriados por ano). Nota é para erro, fato sem fonte e dúvida que nenhuma regra resolve.
 - **Pendência:** a marca `[PENDENTE: ...]` é da esteira, não fato sem fonte. Não tire. Confira que cada dado pendente do dossiê tem a marca e que nenhum dado foi inventado no lugar.
 - Registre cada correção no log: `Validador | correção · <onde> · antes: <x> · depois: <y>`.
 
 ## Saída
 
-1. Baixe o modelo de papel timbrado (ID vem do orquestrador) e gere `peticao.docx` com `scripts/gerar_docx.py`, como diz `formatacao.md`. Se o script avisar papel sem exemplo, corrija a classe no HTML e gere de novo. Suba `peticao.docx` (docx, deixando converter) como Google Doc em `O resultado`, com o título `PETIÇÃO INICIAL <NOME DO CLIENTE>`.
+1. Baixe o modelo de papel timbrado (ID vem do orquestrador) e gere `peticao.docx` com `scripts/gerar_docx.py`, como diz `formatacao.md`. Se o script avisar papel sem exemplo, corrija a classe no HTML; se avisar linha de valor que não cabe, encurte o rótulo (`formatacao.md`). Depois gere de novo. Suba `peticao.docx` (docx, deixando converter) como Google Doc em `O resultado`, com o título `PETIÇÃO INICIAL <NOME DO CLIENTE>`.
 2. **Comentário de pendência.** Faltar documento é comum: a petição sai com o que há, e cada falta fica visível no Doc. Para cada pendência do dossiê, crie um comentário (`insertComment`, `drive.md`), ancorado na marca `[PENDENTE: ...]` ou, sem marca, no trecho onde o dado entra. Use os índices do `read_doc` do Doc que você subiu:
 
    ```

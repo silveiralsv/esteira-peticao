@@ -20,7 +20,7 @@ O modelo tem um parágrafo de exemplo por papel. Cada bloco do HTML copia a form
 | HTML | Papel | Uso |
 |---|---|---|
 | `<p class="enderecamento">` | endereçamento | `AO JUÍZO DA VARA DO TRABALHO DE ...`, em negrito |
-| `<p class="preambulo">` | preâmbulo | qualificação da procuração, com o nome em `<b>` |
+| `<p class="preambulo">` | preâmbulo | qualificação da procuração, com o nome em `<b>`. CTPS e PIS só entram com o número num documento (ex.: `PIS sob o nº ...`, depois do CPF); sem o número, o campo sai, sem `[PENDENTE]` (regra da advogada) |
 | `<h1>` | título | `R E C L A M A Ç Ã O&nbsp;&nbsp;&nbsp;T R A B A L H I S T A` (use `&nbsp;` entre as palavras). Sai com fundo azul-claro na linha inteira (sombreamento do parágrafo), não só atrás das letras |
 | `<p class="em-face">` | em face de | reclamadas, com os nomes em `<b>` |
 | `<p class="local">` | local da prestação | `<b>Local da prestação de serviços:</b> ...` |
@@ -43,7 +43,7 @@ O endereço, o e-mail e os telefones do escritório já estão no rodapé. Não 
 
 ## Regras da advogada
 
-- **Linhas de cálculo:** toda linha tem o pontilhado visível até o valor no fim da linha. Isso evita que o juiz se perca entre as linhas. O Google Docs não tem tabulação com pontilhado, então os pontos vão no texto: `scripts/pontilhado.py` dá a linha pronta (rótulo, pontos, tabulação, valor). O `gerar_docx.py` já usa esse script.
+- **Linhas de cálculo:** toda linha tem o pontilhado visível até o valor no fim da linha. Isso evita que o juiz se perca entre as linhas. O Google Docs não tem tabulação com pontilhado, então os pontos vão no texto: `scripts/pontilhado.py` dá a linha pronta (rótulo, pontos, tabulação, valor). O `gerar_docx.py` já usa esse script. A linha cabe numa linha só: se o rótulo não cabe (o `gerar_docx.py` avisa), encurte o rótulo, como a advogada fez ("... na multa de 40%", sem "do FGTS").
 - **Negrito:** a linha do TOTAL de cada bloco vai inteira em negrito. No fim de cada pedido, o pontilhado e o valor (ou `DECLARAR;`, `EXPEDIR;`, `DEFERIR.`) vão em negrito, para o juiz achar o valor rápido.
 - **Encerramento:** sempre centralizado, nesta ordem: "Termos em que," e "Pede deferimento." em duas linhas seguidas, sem espaço entre elas; depois "São Paulo, data e assinatura certificadas." com espaço antes e depois; depois a assinatura em negrito. O Redator escreve três `<p class="fecho">`, um por linha, e o `<p class="assinatura">`. O `gerar_docx.py` tira o espaço de um `fecho` seguido de outro `fecho`, então só o último `fecho` (local e data) fica com o espaço do modelo.
 - **Linhas em branco:** 3 entre o endereçamento e o preâmbulo, 2 entre o "em face de" e o "Local da prestação de serviços", 1 depois do SUBTOTAL e 1 antes de "Termos em que,". O `gerar_docx.py` põe essas linhas; o Redator não escreve parágrafo vazio (o script ignora).
