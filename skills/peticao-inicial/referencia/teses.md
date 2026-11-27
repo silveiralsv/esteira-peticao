@@ -26,7 +26,7 @@ O escritório representa o trabalhador. A empresa vai puxar tudo para o lado del
 - **Seção "Avaliar".** Na entrevista, "Avaliar" numa seção de tese não é fato. Vira pergunta, e a petição sai sem a tese.
 - **Seção "Verificar".** "Verificar" numa seção de tese, sem fato concreto, deixa a tese fora, sem pergunta. Se a mesma seção também tem "Pedir", a tese entra.
 - **Aposentadoria.** Possibilidade de aposentadoria (garantia pré-aposentadoria) na entrevista é só informação para a audiência. Não vira tese nem pergunta.
-- **Copiar do banco.** O Redator copia a argumentação, as citações e a estrutura do pedido. Ele nunca copia números, datas, nomes, cidades, gênero ou fatos do exemplo.
+- **Copiar do banco.** O Redator copia a argumentação, as citações e a estrutura do pedido, com os parágrafos do exemplo: citação que o exemplo divide em dois parágrafos (ex.: os itens 2.2 e 2.2.1 da resolução do COFEN no acúmulo de função) fica em dois. Ele nunca copia números, datas, nomes, cidades, gênero ou fatos do exemplo.
 - **Tese com um exemplo só.** O Redator usa o exemplo, e o Validador escreve uma nota: "tese nova, confira o critério". Sem nota para as teses que o escritório já confirmou: responsabilidade subsidiária e feriados laborados.
 - **Ordem.** Os fundamentos e os pedidos seguem a ordem da síntese. A síntese segue a ordem desta tabela, de cima para baixo, e termina sempre com "Justiça Gratuita" e "Honorários Advocatícios Sucumbenciais".
 
@@ -56,8 +56,8 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 | Desvio de função | função diferente da contratada | função real, diferença salarial média. "Contratado como X, mas cumpria a função de Y" = desde a admissão até a promoção (ou até a saída) | A: diferença × meses. Sem diferença na entrevista: piso da função exercida − salário; sem piso da função na CCT, o salário base da categoria da função exercida (`calculo.md`). Regra da advogada: o pedido sai sempre calculado, nunca A APURAR, com as linhas do pedido do banco ("Diferenças salariais", uma linha por reflexo e `TOTAL DAS DIFERENÇAS SALARIAIS`) | todos, com DSR |
 | Equiparação salarial | colega com mesma função e salário maior | paradigma, diferença, período | P: diferença × meses | todos, com DSR |
 | Salário-substituição | substituiu um superior | cargo substituído, diferença, período | A: diferença × meses de substituição | todos, com DSR |
-| Diferenças de insalubridade | seção "INSALUBRIDADE" na entrevista, mesmo em branco ou só com o % pago (regra do escritório: com a seção, sempre se pede, sem pergunta) | setor, agente, frequência, % pago | P: (40% − % pago) × SM × meses | sem DSR |
-| Adicional de periculosidade | seção "PERICULOSIDADE" na entrevista, mesmo em branco (regra do escritório: com a seção, sempre se pede, sem pergunta) | agente concreto: radiação (raio-X), inflamável no prédio (geradores, tanques), eletricidade. Se a entrevista traz insalubridade e periculosidade, os dois entram, sem compensar o adicional pago e sem opção pelo mais vantajoso. Com um agente concreto, a tese entra só por ele: não acrescente agente que a entrevista só manda "verificar" (ex.: "verificar laudos"), nem faça pergunta | P: 30% do salário base × meses | sem DSR |
+| Diferenças de insalubridade | seção "INSALUBRIDADE" na entrevista, mesmo em branco ou só com o % pago (regra do escritório: com a seção, sempre se pede, sem pergunta) | setor, agente, frequência, % pago. Grau máximo pelo contato com pacientes: em DOS FATOS e no fundamento, os textos fixos abaixo | P: (40% − % pago) × SM × meses | sem DSR |
+| Adicional de periculosidade | seção "PERICULOSIDADE" na entrevista, mesmo em branco (regra do escritório: com a seção, sempre se pede, sem pergunta) | agente concreto: radiação (raio-X), inflamável no prédio (geradores, tanques), eletricidade. Se a entrevista traz insalubridade e periculosidade, os dois entram, sem compensar o adicional pago e sem opção pelo mais vantajoso. Com um agente concreto, a tese entra só por ele: não acrescente agente que a entrevista só manda "verificar" (ex.: "verificar laudos"), nem faça pergunta. Seção em branco (sem agente): o fundamento é o texto fixo "Periculosidade sem agente na entrevista (fundamento)" abaixo (regra da advogada) | P: 30% do salário base × meses | sem DSR |
 | Requerimento do PPP | insalubridade ou periculosidade na petição | — | F: multa diária de R$ 500,00 | não |
 | Descontos indevidos | desconto no holerite | valor, motivo e quantas vezes ("com frequência" sem número: pelo menos 3) | F: valor de cada desconto × número de descontos | não |
 | Empréstimo consignado não repassado | parcelas descontadas e não pagas ao banco | meses e valor da parcela | F: soma das parcelas | não |
@@ -86,7 +86,7 @@ Coluna "Cálculo": `P` = bloco do modelo de planilha; `A` = aba extra na planilh
 ## Restos de modelo que o Redator não pode copiar
 
 - "afastado o período de licença doença" quando não houve afastamento.
-- Prédio vertical e tanques de diesel quando a entrevista não fala de inflamáveis.
+- Prédio vertical e tanques de diesel quando a entrevista traz outro agente de periculosidade. Com a seção PERICULOSIDADE em branco, esse texto é o modelo da advogada e fica (texto fixo abaixo).
 - "dispensada doente", "aposentadoria por invalidez" ou "discriminada" sem fato. Com fato de doença ocupacional na entrevista, esses trechos (e "teve diversos gastos", "não consegue retornar ao labor", o pedido de indenização se houver incapacidade) são do modelo do escritório e ficam, como no texto fixo abaixo.
 - Gênero do exemplo ("da autora", "a obreira") quando o cliente é de outro gênero.
 - Nome de cidade, município, hospital, gestor ou paradigma do exemplo.
@@ -176,6 +176,26 @@ A lista dos direitos violados sai dos pedidos da própria petição: um item par
 **Multa do art. 477.** Copie o bloco inteiro do exemplo do banco, mesmo sem pedido de vínculo: o título "DA APLICAÇÃO DA MULTA DO §8º DO ART. 477 DA CLT" (sem "– SÚMULA 462 DO C.TST" no título; a advogada recusou esse acréscimo), o parágrafo do § 6º, o parágrafo e a citação da Súmula 462, os dois parágrafos seguintes ("A tentativa de derrogação..." e "Negar aplicação... PREMIAR O ARDIL...") e o "Do exposto, requer...". Ajuste só o gênero.
 
 **Responsabilidade subsidiária.** Use o texto do exemplo do banco como está. Não cite o Tema 1118 do STF, o contrato entre as reclamadas nem outra jurisprudência.
+
+**Diferenças de insalubridade (fato e fundamento).** Regra da advogada: no grau máximo pelo contato com pacientes, DOS FATOS e o primeiro parágrafo do fundamento são estes textos, mesmo que a entrevista não cite doença infectocontagiosa. São texto do modelo: o Validador não tira como fato sem fonte. Ajuste só o gênero.
+
+> [DOS FATOS] A autora mantinha contato direto com todos os tipos de pacientes no setor de <setor>. Porém, a reclamada não realizava o pagamento do adicional de insalubridade em grau correto, pagando-o em grau médio (<% pago>).
+>
+> [primeiro parágrafo do fundamento] A reclamante desempenhava suas funções em contato direto com uma ampla variedade de pacientes, incluindo aqueles portadores de doenças infectocontagiosas.
+
+**Periculosidade sem agente na entrevista (fundamento).** Regra da advogada: com a seção PERICULOSIDADE em branco, o fundamento começa com estes quatro parágrafos, palavra por palavra, e termina com o parágrafo "Pelo exposto acima, requer..." do exemplo do banco. Sem o trecho do raio-X. É texto do modelo: o Validador não tira como fato sem fonte. Ajuste só o gênero.
+
+> A obreira sempre laborou em prédio vertical, onde eram mantidos tanques de óleo diesel de maneira irregular, o que caracteriza área de risco o setor de labor da reclamante.
+>
+> Conforme estabelecido na alínea “b” do subitem III do item 2 do anexo 2 da NR-16, por desenvolver atividades dentro do prédio de armazenamento de inflamáveis e na alínea “s” do item 3 do anexo 2 da NR-16, onde toda a área interna inflamáveis líquidos ou vazios não de gaseificados, ou decantados, em recinto fechado fazendo jus ao direito do recebimento do adicional de periculosidade (30%).
+>
+> Nesse entendimento, cabe mencionar a Orientação Jurisprudencial N. 385 do C.TST:
+>
+> “OJ 385. ADICIONAL DE PERICULOSIDADE. DEVIDO. ARMAZENAMENTO DE LÍQUIDO INFLAMÁVEL NO PRÉDIO. CONSTRUÇÃO VERTICAL. (DeJT 09/06/2010). É devido o pagamento do adicional de periculosidade ao empregado que desenvolve suas atividades em edifício (construção vertical), seja em pavimento igual ou distinto daquele onde estão instalados tanques para armazenamento de líquido inflamável, em quantidade acima do limite legal, considerando-se como área de risco toda a área interna da construção vertical.”.
+
+**Requerimento do PPP (pedido).** Regra da advogada: o pedido é sempre este texto, com o pontilhado até o fim da linha (são 105 pontos). O pontilhado e o valor vão em negrito. Ajuste só o gênero.
+
+> **<letra>-** Seja a reclamada compelida a proceder o fornecimento de PPP a reclamante, para que sejam lançadas as informações da exposição ao agente insalubre/periculoso por todo o seu contrato de trabalho, para fins previdenciários, sob pena de pagamento de multa diária de **......................................................................................................... R$ 500,00;**
 
 **Doença ocupacional e danos (fundamento).** Seção "DA INDENIZAÇÃO POR DANO MORAL E MATERIAL". Comece com o parágrafo abaixo, depois os fatos da entrevista (assédio, doença, afastamento, tratamento, restrição médica), sem nome de terceiros, e então os parágrafos fixos do modelo. Ajuste só o gênero.
 
