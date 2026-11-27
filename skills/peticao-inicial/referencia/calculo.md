@@ -55,7 +55,7 @@ Sobre a verba principal X, com 2 casas decimais em cada linha:
 | DSR | 5% de X |
 
 - Insalubridade e periculosidade não têm DSR.
-- Sem aviso prévio indenizado (pessoa ainda empregada sem rescisão indireta, ou pedido de demissão mantido), tire a linha do aviso.
+- **Aviso prévio, sempre (regra da advogada):** todo bloco com reflexos tem a linha do aviso prévio, calculada (X / 12), mesmo sem aviso prévio indenizado (pedido de demissão mantido, pessoa ainda empregada). A regra é só do aviso: sem dispensa sem justa causa ou rescisão indireta, a linha da multa de 40% continua fora.
 - Com a reversão do pedido de demissão (rescisão indireta), a saída vale como dispensa sem justa causa: todos os blocos têm as linhas do aviso prévio e da multa de 40% (e o acúmulo usa o ×1,4398).
 - O TOTAL do bloco é a soma exata das linhas escritas, já arredondadas.
 
