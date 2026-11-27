@@ -63,7 +63,7 @@ Monte a tabela de parâmetros de cada tese escolhida (salário, jornada, minutos
 
 Se o log já tem rodadas anteriores, leia o Doc de perguntas mais recente em `O resultado`. Use as respostas como fatos, com a fonte `Doc de perguntas, rodada N`. Resposta que é uma regra geral do escritório já pode estar em `referencia/`; siga a regra. Pergunta sem resposta que uma regra de `referencia/` já resolve está fechada. As outras continuam pendentes.
 
-Na rodada de ajuste (o orquestrador passa o ID da petição), a petição já existe e não é reescrita. Leia o texto dela com `read_file_content` e `includeComments: true`, e grave `mudancas.md` no diretório de trabalho: cada coisa que a petição precisa mudar por causa de uma resposta ou de um documento novo. Para cada item:
+Na rodada de ajuste (o orquestrador passa o ID da petição), a petição já existe e não é reescrita. Leia o texto dela com `read_file_content` e `includeComments: true`, e grave `mudancas.md` no diretório de trabalho: cada coisa que a petição precisa mudar por causa de uma resposta ou de um documento novo. Quando o orquestrador passa o hash de um commit do modo aprendizado, leia o commit (`git -C <repositório> show <hash>`) e crie também um item para cada regra nova que se aplica a esta petição e que ela ainda não cumpre, com a fonte `regra nova, commit <hash>`. Regra nova que não se aplica ou que a petição já cumpre vai para o log com o motivo. Para cada item:
 
 ```
 <n>. <onde na petição: seção, pedido ou parágrafo> — <o que muda: fato, tese que entra ou sai, parâmetro, pedido>

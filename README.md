@@ -58,7 +58,7 @@ Precisa do conector Google Workspace (Google Docs e Google Sheets), além do Goo
 
 Use quando o advogado já revisou a petição e você quer que a esteira aprenda. A esteira lê os comentários e as respostas (abertos e resolvidos), as respostas das perguntas e as edições diretas do advogado. Para achar as edições, ela compara a petição com o `texto-da-esteira.txt`, que cada rodada grava em `O resultado`.
 
-Cada padrão geral vira regra em `referencia/` ou nos agentes, sem dado do cliente. Depois a esteira faz commit e push na `main`. Ela não muda a petição nem roda rodada nova. O que não dá para saber se vale para todos volta como dúvida para o advogado.
+Cada padrão geral vira regra em `referencia/` ou nos agentes, sem dado do cliente. Depois a esteira faz commit e push na `main` e, na sequência, roda uma rodada de ajuste na mesma pasta: as regras novas entram na petição e na planilha como sugestões. As edições diretas do advogado ficam. O que não dá para saber se vale para todos volta como dúvida para o advogado.
 
 Sem a flag, a esteira só executa e não grava regra.
 
@@ -124,7 +124,7 @@ skills/peticao-inicial/config.example.md
 | Q6 | Os agentes podem buscar dados fora da pasta (CNPJ, vara, CCT, salário mínimo), sempre citando a fonte. |
 | Q7 | O escritório autorizou o envio dos dados dos clientes ao modelo. |
 | Q8 | Danos morais: R$ 10.000,00. O pedido só de danos morais usa o texto fixo da advogada, com o inciso I do art. 223-G; com doença ocupacional, o pedido de danos morais e materiais (R$ 10.000,00 cada). |
-| Q12 | A esteira é uma skill: `/peticao-inicial <link>`. Com `--learn`, ela só aprende com a revisão do advogado e sobe as regras na `main`. |
+| Q12 | A esteira é uma skill: `/peticao-inicial <link>`. Com `--learn`, ela aprende com a revisão do advogado, sobe as regras na `main` e roda uma rodada de ajuste que aplica as regras novas na mesma petição. |
 | Q15 | O Doc de perguntas tem o campo `Responde: eu / escritório`. |
 
 ## Privacidade

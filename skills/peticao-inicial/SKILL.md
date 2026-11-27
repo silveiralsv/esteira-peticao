@@ -1,6 +1,6 @@
 ---
 name: peticao-inicial
-description: Gera a petição inicial trabalhista (reclamação trabalhista) a partir da pasta do cliente no Google Drive. Roda três agentes em sequência (Verificador, Redator, Validador), grava o Google Doc da petição, a planilha de cálculo preenchida, o relatório de validação e o log.txt na subpasta "O resultado". Com o link do Google Doc da petição, roda o modo revisão - aplica os comentários do advogado no mesmo Doc, em modo sugestão, sem recriar a petição. Use quando o usuário digitar "/peticao-inicial <link da pasta do cliente ou do Doc da petição>" ou pedir "roda a petição inicial dessa pasta", "gera a inicial do cliente", "faz a reclamação trabalhista desse Drive", "aplica os comentários da advogada na petição", "revisa a petição com os comentários". Com "--learn", roda o modo aprendizado - não muda a petição; lê os comentários, as respostas e as edições do advogado, grava as regras gerais na esteira e faz commit e push na main. Use também quando o usuário pedir "aprende com os comentários da advogada", "vê o que a advogada colocou e sobe na main".
+description: Gera a petição inicial trabalhista (reclamação trabalhista) a partir da pasta do cliente no Google Drive. Roda três agentes em sequência (Verificador, Redator, Validador), grava o Google Doc da petição, a planilha de cálculo preenchida, o relatório de validação e o log.txt na subpasta "O resultado". Com o link do Google Doc da petição, roda o modo revisão - aplica os comentários do advogado no mesmo Doc, em modo sugestão, sem recriar a petição. Use quando o usuário digitar "/peticao-inicial <link da pasta do cliente ou do Doc da petição>" ou pedir "roda a petição inicial dessa pasta", "gera a inicial do cliente", "faz a reclamação trabalhista desse Drive", "aplica os comentários da advogada na petição", "revisa a petição com os comentários". Com "--learn", roda o modo aprendizado - lê os comentários, as respostas e as edições do advogado, grava as regras gerais na esteira, faz commit e push na main e, na sequência, roda uma rodada de ajuste que aplica as regras novas na mesma petição, em modo sugestão. Use também quando o usuário pedir "aprende com os comentários da advogada", "vê o que a advogada colocou e sobe na main".
 argument-hint: [--learn] <link da pasta do cliente, ou do Google Doc da petição>
 ---
 
@@ -12,7 +12,7 @@ O argumento é o link da **pasta do cliente**. Essa pasta tem duas subpastas: `O
 
 Se o link for de um Google Doc (`/document/d/<ID>`), não faça uma rodada nova. Siga a seção "Modo revisão" no fim deste arquivo.
 
-Se o argumento tem `--learn` (antes ou depois do link), não faça rodada nem revisão. Siga só a seção "Modo aprendizado". Sem a flag, a esteira só executa: as regras novas ficam como candidatas no log, e só o modo aprendizado grava regras e faz commit.
+Se o argumento tem `--learn` (antes ou depois do link), siga a seção "Modo aprendizado": ela aprende e, no fim, roda uma rodada de ajuste na mesma pasta. Sem a flag, a esteira só executa: as regras novas ficam como candidatas no log, e só o modo aprendizado grava regras e faz commit.
 
 Responda ao usuário em português.
 
@@ -123,7 +123,7 @@ O advogado revisou a petição no Google Doc e deixou comentários. O modo revis
 
 O advogado já revisou a petição: comentou, respondeu as perguntas, editou o texto. O modo aprendizado transforma o que ele fez em regras gerais da esteira e grava no repositório, com commit e push na `main`. A flag é o pedido do usuário para esse commit e esse push.
 
-Ele não muda a petição, a planilha nem outro arquivo do Drive, exceto o `log.txt`. Ele não roda rodada nova: para isso, o usuário roda `/peticao-inicial <link>` sem a flag depois.
+Os itens 1 a 9 não mudam a petição, a planilha nem outro arquivo do Drive, exceto o `log.txt`. Depois de aprender, o item 10 roda uma rodada de ajuste na mesma pasta, que aplica as regras novas na petição. O usuário não precisa rodar `/peticao-inicial <link>` de novo.
 
 1. **Pasta do cliente.** O link pode ser da pasta do cliente, de uma subpasta dela ou do Doc da petição. Ache a pasta do cliente e `O resultado` como no Passo 1 (item 1) e no Modo revisão (item 1). Liste `O resultado`: petição, planilha, relatórios, Docs de perguntas, `log.txt` e `texto-da-esteira.txt`.
 2. **Repositório.** É `git -C <pasta desta skill> rev-parse --show-toplevel`. O branch tem que ser `main`, sem mudança fora de commit (`git status --porcelain`). Senão, pare e diga ao usuário o que está diferente. Rode `git pull --ff-only`.
@@ -151,7 +151,14 @@ Ele não muda a petição, a planilha nem outro arquivo do Drive, exceto o `log.
 7. **Dados do cliente.** O repositório é público. Rode `git diff` e confira que nenhuma linha nova tem nome, CPF, RG, endereço, cidade, empresa, data, valor ou número de processo do cliente. Jurisprudência citada no texto modelo do advogado não é dado do cliente. Tire o que tiver. A mensagem de commit também não leva dado do cliente.
 8. **Commit e push.** Se nada mudou, não faça commit. Senão, `git add` só nos arquivos mudados, commit `feat: <o que a esteira aprendeu>` com as linhas de atribuição da sessão, e `git push origin main`. Se o push falhar, não force: diga ao usuário.
 9. **Fechar.** Acrescente ao log uma linha por item, `Aprendizado | comentário <id> · <tipo> · <regra gravada ou "nada">` (ou `edição · <seção>`, `pergunta <n>`), e `Aprendizado | fim · commit <hash> · <n> regras · <n> dúvidas`. Suba o `log.txt` e substitua o antigo. Apague o diretório de trabalho.
-10. **Responder.** Diga ao usuário:
+10. **Rodada de ajuste.** Na sequência, rode uma rodada de ajuste na mesma pasta do cliente: Passos 1, 2, 3A, 4 e 5, como sem a flag. Ela roda mesmo sem commit, para aplicar os comentários abertos e as respostas novas.
+    - Passe ao Verificador, ao Revisor e ao Validador o hash do commit do item 8 (ou `nenhum`), e diga que esta rodada aplica e confere as regras desse commit.
+    - Peça a cada agente que leia antes o próprio arquivo em `agents/` no repositório. O commit pode ter mudado a definição depois que a sessão começou.
+    - O Verificador põe em `mudancas.md` um item para cada regra nova do commit que se aplica a esta petição (Passo 8 do `peticao-verificador.md`).
+    - As edições diretas do advogado ficam. Se uma contradiz uma regra nova, vale a edição, e o item entra nas dúvidas.
+    - Se a pasta não tem petição em `O resultado`, não há o que ajustar: pule e diga isso.
+11. **Responder.** Diga ao usuário:
     - uma tabela: origem (comentário, resposta, edição ou pergunta, com autor e primeiras palavras), tipo, o que a esteira aprendeu e o arquivo;
     - o commit, e que as regras já valem para as próximas rodadas, nesta máquina e nas outras depois do `git pull`;
-    - as dúvidas para o advogado.
+    - as dúvidas para o advogado;
+    - o resultado da rodada de ajuste, como no Passo 5: cada regra nova aplicada, já cumprida ou que não se aplica, e as sugestões no Doc.
